@@ -27,7 +27,7 @@ jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
     env:
-      FINANCE_LEASE_DB_PATH: ${{ runner.temp }}/finance_lease_monitor.sqlite3
+      FINANCE_LEASE_DB_PATH: /tmp/finance_lease_monitor.sqlite3
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
