@@ -1,0 +1,17 @@
+services:
+  finance-lease-monitor:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8765:8765"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8765
+      AUTO_REFRESH_ENABLED: 1
+      AUTO_REFRESH_INTERVAL_MINUTES: 60
+      AUTO_REFRESH_STARTUP_DELAY_SECONDS: 10
+      AUTO_REFRESH_SKIP_PDF: 0
+      MANUAL_REFRESH_ENABLED: 0
+      PAGE_POLL_INTERVAL_SECONDS: 60
+    volumes:
+      - ./data:/app/data

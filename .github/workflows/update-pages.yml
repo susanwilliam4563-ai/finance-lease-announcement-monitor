@@ -1,0 +1,89 @@
+name: 更新公告并发布网站
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "styles.css"
+      - "app.js"
+      - "*.py"
+      - "requirements.txt"
+      - ".github/workflows/update-pages.yml"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: finance-lease-pages
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      FINANCE_LEASE_DB_PATH: ${{ runner.temp }}/finance_lease_monitor.sqlite3
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: 读取项目
+        uses: actions/checkout@v4
+
+      - name: 准备 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 从公开快照重建工作数据库
+        run: python import_records_json.py data/records.json --reset
+
+      - name: 抓取最近十四天公告
+        id: update
+        continue-on-error: true
+        run: |
+          START_DATE=$(TZ=Asia/Shanghai date -d "14 days ago" +%F)
+          END_DATE=$(TZ=Asia/Shanghai date +%F)
+          python cninfo_updater.py --start "$START_DATE" --end "$END_DATE"
+
+      - name: 补齐新增主体画像
+        continue-on-error: true
+        run: python eastmoney_profile_enricher.py
+
+      - name: 生成公开数据快照
+        run: python export_records_js.py
+
+      - name: 保存有变化的公告数据
+        run: |
+          git config user.name "finance-lease-monitor"
+          git config user.email "finance-lease-monitor@users.noreply.github.com"
+          git add data/records.json
+          if ! git diff --cached --quiet; then
+            git commit -m "data: update finance lease announcements"
+            git push
+          fi
+
+      - name: 构建静态网站
+        run: python build_static_site.py
+
+      - name: 配置 Pages
+        uses: actions/configure-pages@v5
+
+      - name: 上传网站
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site-dist
+
+      - name: 发布网站
+        id: deployment
+        uses: actions/deploy-pages@v4

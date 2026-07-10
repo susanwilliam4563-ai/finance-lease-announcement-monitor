@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+site-dist/
+data/finance_lease_monitor.sqlite3
+data/records.js

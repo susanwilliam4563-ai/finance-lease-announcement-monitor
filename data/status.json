@@ -1,0 +1,46 @@
+{
+  "deployment_mode": "static",
+  "generated_at": "2026-07-10 17:08:14",
+  "revision": "32f43d5615b47bc0",
+  "record_count": 2546,
+  "earliest_announcement_date": "2021-01-01",
+  "latest_announcement_date": "2026-07-09",
+  "history_start_date": "2021-01-01",
+  "latest_run": {
+    "id": 17,
+    "source": "巨潮资讯",
+    "start_date": "2026-06-26",
+    "end_date": "2026-07-10",
+    "status": "success",
+    "message": "fetched=141 kept=0",
+    "fetched_count": 141,
+    "kept_count": 0,
+    "started_at": "2026-07-10 09:08:10",
+    "finished_at": "2026-07-10 09:08:14"
+  },
+  "latest_successful_run": {
+    "id": 17,
+    "source": "巨潮资讯",
+    "start_date": "2026-06-26",
+    "end_date": "2026-07-10",
+    "status": "success",
+    "message": "fetched=141 kept=0",
+    "fetched_count": 141,
+    "kept_count": 0,
+    "started_at": "2026-07-10 09:08:10",
+    "finished_at": "2026-07-10 09:08:14"
+  },
+  "data_as_of": "2026-07-10",
+  "days_since_check": 0,
+  "source_counts": {
+    "巨潮资讯": 2546
+  },
+  "page_poll_interval_seconds": 60,
+  "auto_refresh": {
+    "enabled": true,
+    "interval_minutes": 60,
+    "running": false,
+    "last_finished_at": "2026-07-10 17:08:14",
+    "next_run_at": null
+  }
+}
