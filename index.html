@@ -3,186 +3,164 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="上市公司与发债主体融资租赁公告监控、检索与证据复核看板" />
-    <title>融资租赁公告监测台</title>
-    <link rel="stylesheet" href="./styles.css?v=20260710-3" />
+    <meta name="description" content="上市公司体系融资租赁公告、业务机会与同业动态监测" />
+    <title>上市公司融资租赁情报台</title>
+    <link rel="stylesheet" href="./styles.css?v=20260715-2" />
   </head>
   <body>
-    <div class="app-shell">
+    <div class="app-shell" data-density="compact">
       <header class="app-header">
         <div class="brand-block">
           <div class="brand-mark" aria-hidden="true">租</div>
           <div>
-            <h1>融资租赁公告监测台</h1>
-            <p>上市公司与发债主体 · 事件识别、证据复核、持续跟踪</p>
+            <h1>上市公司融资租赁情报台</h1>
+            <p>项目机会、业务阶段与同业动态</p>
           </div>
         </div>
+        <nav class="top-nav" aria-label="主要功能">
+          <button class="nav-item active" type="button" data-view="today">今日情报</button>
+          <button class="nav-item" type="button" data-view="search">公告检索</button>
+          <button class="nav-item" type="button" data-view="companies">上市公司雷达</button>
+          <button class="nav-item" type="button" data-view="lessors">同业雷达</button>
+          <button class="nav-item" type="button" data-view="analytics">数据分析</button>
+          <button class="nav-item" type="button" data-view="workspace">我的工作台</button>
+          <button class="nav-item" type="button" data-view="status">数据状态</button>
+        </nav>
         <div class="header-status" aria-live="polite">
           <div class="sync-state" id="syncState" data-state="checking">
             <span class="status-dot" aria-hidden="true"></span>
-            <div>
-              <strong id="refreshStatus">正在检查自动更新</strong>
-              <small id="nextRefresh">--</small>
-            </div>
+            <div><strong id="refreshStatus">正在核对数据</strong><small id="lastSuccessAt">--</small></div>
           </div>
-          <div class="status-fact">
-            <span>数据截至</span>
-            <strong id="dataAsOf">--</strong>
-          </div>
-          <div class="status-fact">
-            <span>当前数据</span>
-            <strong id="datasetStatus">载入中</strong>
-          </div>
+          <div class="status-fact"><span>最新公告</span><strong id="dataAsOf">--</strong></div>
+          <div class="status-fact"><span>公告数据</span><strong id="datasetStatus">载入中</strong></div>
         </div>
       </header>
 
-      <section class="toolbar" aria-label="公告检索和筛选">
-        <div class="primary-filters">
-          <label class="search-box" for="globalSearch">
-            <span>搜索公告</span>
-            <input id="globalSearch" type="search" placeholder="输入公司、标题、交易对手、金额或证据关键词" autocomplete="off" />
-          </label>
-          <label>
-            时间
-            <select id="datePreset">
-              <option value="all">全部</option>
-              <option value="today">最新公告日</option>
-              <option value="7" selected>近7天</option>
-              <option value="30">近30天</option>
-              <option value="90">近90天</option>
-              <option value="180">近180天</option>
-              <option value="ytd">今年以来</option>
-              <option value="custom">自定义</option>
-            </select>
-          </label>
-          <label>
-            地区
-            <select id="region"><option value="">全部地区</option></select>
-          </label>
-          <label>
-            证监会行业
-            <select id="industry"><option value="">全部行业</option></select>
-          </label>
-          <label>
-            关注等级
-            <select id="level"><option value="">全部等级</option></select>
-          </label>
-          <button id="resetFilters" type="button" class="ghost-btn">重置</button>
-        </div>
+      <div id="healthBanner" class="health-banner" data-state="checking" role="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <strong id="healthTitle">正在检查数据新鲜度</strong>
+        <span id="healthDetail">--</span>
+      </div>
 
-        <details class="advanced-filters">
-          <summary>更多筛选与数据工具</summary>
-          <div class="advanced-content">
-            <div class="filter-row">
-              <label>年度<select id="yearFilter"><option value="">全部年度</option></select></label>
-              <label>季度<select id="quarterFilter"><option value="">全部季度</option><option value="Q1">Q1</option><option value="Q2">Q2</option><option value="Q3">Q3</option><option value="Q4">Q4</option></select></label>
+      <div class="workspace-grid">
+        <aside class="filter-sidebar" aria-label="公告筛选">
+          <div class="sidebar-head">
+            <div><span class="eyebrow">上市公司范围</span><h2>筛选</h2></div>
+            <div class="sidebar-actions"><button id="toggleFilters" type="button" class="text-btn mobile-filter-toggle" aria-expanded="true">收起条件</button><button id="resetFilters" type="button" class="text-btn">重置</button></div>
+          </div>
+          <label class="search-box" for="globalSearch">
+            <span>公司、子公司、出租人</span>
+            <input id="globalSearch" type="search" placeholder="输入名称、代码或关键词" autocomplete="off" />
+          </label>
+          <div class="filter-grid">
+            <label>时间<select id="datePreset"><option value="today">今日</option><option value="7" selected>近7天</option><option value="30">近30天</option><option value="90">近90天</option><option value="180">近180天</option><option value="ytd">今年以来</option><option value="custom">自定义</option><option value="all">全部历史</option></select></label>
+            <label>上市市场<select id="marketFilter"><option value="">全部市场</option></select></label>
+            <label>企业性质<select id="natureFilter"><option value="">全部性质</option></select></label>
+            <label>承租主体<select id="relationFilter"><option value="">全部关系</option></select></label>
+            <label>地区<select id="region"><option value="">全部地区</option></select></label>
+            <label>证监会行业<select id="industry"><option value="">全部行业</option></select></label>
+            <label>业务类型<select id="businessTypeFilter"><option value="">全部类型</option></select></label>
+            <label>业务阶段<select id="stageFilter"><option value="">全部阶段</option></select></label>
+            <label>融资金额<select id="amountBandFilter"><option value="">全部金额</option></select></label>
+            <label>融资期限<select id="termBandFilter"><option value="">全部期限</option></select></label>
+            <label>出租人<select id="counterpartyFilter"><option value="">全部出租人</option></select></label>
+            <label>出租人类型<select id="lessorTypeFilter"><option value="">全部类型</option></select></label>
+          </div>
+          <details class="advanced-filters">
+            <summary>高级筛选</summary>
+            <div class="filter-grid advanced-grid">
               <label>起始日期<input id="startDate" type="date" /></label>
               <label>结束日期<input id="endDate" type="date" /></label>
-              <label>主体类型<select id="subjectType"><option value="">全部主体</option></select></label>
-              <label>来源层级<select id="sourceClass"><option value="">全部层级</option></select></label>
-              <label>具体来源<select id="source"><option value="">全部来源</option></select></label>
-              <label>风险标签<select id="risk"><option value="">全部标签</option></select></label>
+              <label>年度<select id="yearFilter"><option value="">全部年度</option></select></label>
+              <label>租赁物<select id="assetFilter"><option value="">全部租赁物</option></select></label>
+              <label>担保增信<select id="guaranteeFilter"><option value="">全部方式</option></select></label>
+              <label>机会分类<select id="opportunityFilter"><option value="">全部分类</option></select></label>
+              <label>信息来源<select id="source"><option value="">全部来源</option></select></label>
               <label>复核状态<select id="reviewStatus"><option value="">全部状态</option></select></label>
             </div>
-            <div class="data-actions">
-              <label class="check-control"><input id="onlyHigh" type="checkbox" /> 仅看重点</label>
-              <label class="check-control"><input id="onlyUnverified" type="checkbox" /> 仅看待复核</label>
-              <button id="exportCsv" type="button" class="ghost-btn">导出当前结果</button>
-              <label class="import-box">导入补充线索<input id="dataUpload" type="file" accept=".json" /></label>
-            </div>
+          </details>
+          <div class="filter-options">
+            <label><input id="onlyHigh" type="checkbox" /> 仅看高价值线索</label>
+            <label><input id="onlyUnverified" type="checkbox" /> 仅看待复核</label>
+            <label><input id="mergeProjects" type="checkbox" checked /> 合并同一项目</label>
           </div>
-        </details>
-      </section>
+          <div class="saved-filter-box">
+            <span>常用筛选</span>
+            <div id="savedFilterList" class="saved-filter-list"></div>
+            <div class="inline-form"><input id="savedFilterName" placeholder="筛选名称" /><button id="saveFilter" type="button">保存</button></div>
+          </div>
+        </aside>
 
-      <main class="dashboard">
-        <div id="healthBanner" class="health-banner" data-state="checking" role="status">
-          <span class="status-dot" aria-hidden="true"></span>
-          <strong id="healthTitle">正在核对数据新鲜度</strong>
-          <span id="healthDetail">页面会自动同步服务器中的最新公告。</span>
-        </div>
+        <main class="main-stage">
+          <section class="view-panel active" data-page="today" aria-labelledby="todayTitle">
+            <div class="section-head"><div><span class="eyebrow">近7天</span><h2 id="todayTitle">上市公司融资租赁动态</h2></div><span id="updatedAt" class="view-updated">页面同步 --</span></div>
+            <section class="metric-strip" aria-label="今日情报摘要">
+              <article><span>今日新增</span><strong id="metricToday">0</strong><small>条公告</small></article>
+              <article><span>近7天新增</span><strong id="metricWeek">0</strong><small>条公告</small></article>
+              <article><span>上市公司</span><strong id="metricCompanies">0</strong><small>家</small></article>
+              <article><span>子公司事项</span><strong id="metricSubsidiaries">0</strong><small>个承租主体</small></article>
+              <article><span>高价值线索</span><strong id="metricHigh">0</strong><small>值得联系</small></article>
+              <article><span>待复核</span><strong id="metricPending">0</strong><small>需补充证据</small></article>
+              <article><span>最近成功更新</span><strong id="metricLastSuccess">--</strong><small>云端任务</small></article>
+            </section>
+            <div class="section-head compact"><div><h3>今日重点线索</h3><p>按业务机会价值排序</p></div><button class="text-btn" type="button" data-jump-view="search">查看全部</button></div>
+            <div id="leadList" class="lead-list"></div>
+          </section>
 
-        <section class="metric-strip" aria-label="当前筛选结果摘要">
-          <article><span>匹配事件</span><strong id="metricTotal">0</strong><small id="metricRange">--</small></article>
-          <article><span>重点关注</span><strong id="metricHigh">0</strong><small>A级事件</small></article>
-          <article><span>待复核</span><strong id="metricPending">0</strong><small>需补正文或原文</small></article>
-          <article><span>关联交易</span><strong id="metricRelated">0</strong><small>公告明确披露</small></article>
-          <article><span>担保/抵押</span><strong id="metricGuarantee">0</strong><small>增信与资产约束</small></article>
-        </section>
-
-        <section class="workbench" aria-label="融资租赁事件与证据链">
-          <section class="table-section">
-            <div class="table-head">
-              <div>
-                <h2>融资租赁事件</h2>
-                <p id="resultCount">0 条结果</p>
-              </div>
-              <span id="updatedAt" class="view-updated">页面同步 --</span>
-            </div>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr>
-                    <th>日期 / 主体</th>
-                    <th>事件判断与命中依据</th>
-                    <th>关键要素</th>
-                    <th>风险与复核</th>
-                  </tr>
-                </thead>
+          <section class="view-panel" data-page="search" aria-labelledby="searchTitle">
+            <div class="section-head"><div><span class="eyebrow">项目化展示</span><h2 id="searchTitle">公告检索</h2><p id="resultCount">0 条结果</p></div><div class="table-tools"><label>排序<select id="sortBy"><option value="opportunity">业务机会价值</option><option value="date">公告时间</option><option value="amount">融资金额</option><option value="level">业务机会等级</option><option value="frequency">近一年租赁次数</option><option value="completeness">信息完整度</option><option value="marketCap">上市公司市值</option></select></label><div class="segmented" aria-label="显示密度"><button id="compactMode" class="active" type="button">紧凑</button><button id="standardMode" type="button">标准</button></div><button id="exportCsv" type="button" class="secondary-btn">导出</button></div></div>
+            <div class="table-wrap announcement-table-wrap">
+              <table class="announcement-table">
+                <thead><tr><th>公告日期</th><th>上市公司</th><th>市场/性质</th><th>实际承租人</th><th>业务类型</th><th>业务阶段</th><th>融资金额</th><th>期限</th><th>出租人</th><th>租赁物/担保</th><th>机会</th><th>工作状态</th></tr></thead>
                 <tbody id="recordsBody"></tbody>
               </table>
             </div>
-            <div id="tableFooter" class="table-footer">
-              <span id="visibleCount">显示 0 条</span>
-              <button id="loadMore" type="button" class="ghost-btn">继续加载</button>
+            <div class="pagination"><span id="visibleCount">显示 0 条</span><div><button id="prevPage" type="button" class="secondary-btn">上一页</button><span id="pageInfo">1 / 1</span><button id="nextPage" type="button" class="secondary-btn">下一页</button></div></div>
+          </section>
+
+          <section class="view-panel" data-page="companies" aria-labelledby="companiesTitle">
+            <div class="section-head"><div><span class="eyebrow">上市公司体系</span><h2 id="companiesTitle">上市公司雷达</h2><p>公司本部与子公司统一归集</p></div></div>
+            <div class="table-wrap"><table><thead><tr><th>上市公司</th><th>市场</th><th>性质</th><th>地区/行业</th><th>历史次数</th><th>近一年</th><th>披露金额</th><th>合作出租人</th><th>最近公告</th></tr></thead><tbody id="companyBody"></tbody></table></div>
+          </section>
+
+          <section class="view-panel" data-page="lessors" aria-labelledby="lessorsTitle">
+            <div class="section-head"><div><span class="eyebrow">竞争对手监测</span><h2 id="lessorsTitle">同业雷达</h2><p>仅统计公告已披露的出租人</p></div></div>
+            <div class="table-wrap"><table><thead><tr><th>出租人</th><th>类型</th><th>合作上市公司</th><th>近一年项目</th><th>累计披露金额</th><th>平均单笔</th><th>主要行业</th><th>常见期限</th><th>最近项目</th></tr></thead><tbody id="lessorBody"></tbody></table></div>
+          </section>
+
+          <section class="view-panel" data-page="analytics" aria-labelledby="analyticsTitle">
+            <div class="section-head"><div><span class="eyebrow">当前筛选范围</span><h2 id="analyticsTitle">数据分析</h2></div></div>
+            <div class="analysis-grid">
+              <article class="analysis-panel wide"><h3>新增趋势</h3><div id="trendChart" class="bar-chart"></div></article>
+              <article class="analysis-panel"><h3>地区排行</h3><div id="regionChart" class="rank-list"></div></article>
+              <article class="analysis-panel"><h3>行业排行</h3><div id="industryChart" class="rank-list"></div></article>
+              <article class="analysis-panel"><h3>业务阶段</h3><div id="stageChart" class="rank-list"></div></article>
+              <article class="analysis-panel"><h3>出租人活跃度</h3><div id="counterpartyChart" class="rank-list"></div></article>
+              <article class="analysis-panel"><h3>业务机会分布</h3><div id="opportunityChart" class="tag-cloud"></div></article>
             </div>
           </section>
 
-          <aside class="detail-panel" id="eventDetail" aria-label="事件证据链">
-            <div class="detail-head">
-              <div>
-                <span class="section-kicker">当前事件</span>
-                <h2>证据链</h2>
-              </div>
-              <span id="detailLevel" class="level-badge">未选择</span>
-            </div>
-            <div id="detailContent" class="detail-empty">
-              <strong>选择一条事件开始复核</strong>
-              <p>公告原文、命中片段、业务要素和研判建议会在这里集中显示。</p>
-            </div>
-          </aside>
-        </section>
+          <section class="view-panel" data-page="workspace" aria-labelledby="workspaceTitle">
+            <div class="section-head"><div><span class="eyebrow">当前浏览器</span><h2 id="workspaceTitle">我的工作台</h2><p>工作状态保存在本设备</p></div></div>
+            <div class="workspace-metrics"><article><span>收藏</span><strong id="workFavoriteCount">0</strong></article><article><span>待联系</span><strong id="workContactCount">0</strong></article><article><span>待跟进</span><strong id="workFollowCount">0</strong></article><article><span>已立项</span><strong id="workProjectCount">0</strong></article></div>
+            <div id="reminderList" class="reminder-list"></div>
+            <div class="table-wrap"><table><thead><tr><th>上市公司</th><th>公告</th><th>业务机会</th><th>状态</th><th>负责人</th><th>下次跟进</th><th>备注</th></tr></thead><tbody id="workspaceBody"></tbody></table></div>
+          </section>
 
-        <details class="analysis-drawer">
-          <summary>趋势、来源覆盖与外部复核入口</summary>
-          <div class="analysis-content">
-            <section class="source-strip" aria-label="来源覆盖">
-              <article><span>官方公告</span><strong id="sourceOfficial">0</strong><small>巨潮 / 交易所</small></article>
-              <article><span>发债披露</span><strong id="sourceBond">0</strong><small>债券市场文件</small></article>
-              <article><span>公司官网</span><strong id="sourceCompany">0</strong><small>复核来源</small></article>
-              <article><span>预警通</span><strong id="sourceWarning">0</strong><small>补充线索</small></article>
-              <article><span>互联网 / 公众号</span><strong id="sourceWeb">0</strong><small>待复核线索</small></article>
-            </section>
-            <section class="analysis-meta">
-              <span>地区与行业画像覆盖 <strong id="metricProfile">0%</strong></span>
-            </section>
-            <section class="insight-grid">
-              <article class="panel wide"><div class="panel-head"><h2>新增趋势</h2><p>按筛选范围切换日/月粒度</p></div><div id="trendChart" class="bar-chart"></div></article>
-              <article class="panel"><div class="panel-head"><h2>地区排行</h2><p>注册地</p></div><div id="regionChart" class="rank-list"></div></article>
-              <article class="panel"><div class="panel-head"><h2>行业排行</h2><p>证监会行业</p></div><div id="industryChart" class="rank-list"></div></article>
-              <article class="panel"><div class="panel-head"><h2>交易对手</h2><p>租赁 / 金租机构</p></div><div id="counterpartyChart" class="rank-list"></div></article>
-              <article class="panel"><div class="panel-head"><h2>高频主体</h2><p>连续融资线索</p></div><div id="subjectChart" class="rank-list"></div></article>
-              <article class="panel"><div class="panel-head"><h2>风险标签</h2><p>多标签统计</p></div><div id="riskChart" class="tag-cloud"></div></article>
-            </section>
-            <section class="external-search">
-              <div><h2>外部复核</h2><p>互联网与公众号内容只作为线索，正式判断以原始公告为准。</p></div>
-              <div class="lead-search"><input id="leadQuery" type="search" placeholder="例如：某公司 售后回租" /><button id="buildLeadLinks" type="button" class="ghost-btn">生成入口</button></div>
-              <div id="leadLinks" class="lead-links"></div>
-            </section>
-          </div>
-        </details>
-      </main>
+          <section class="view-panel" data-page="status" aria-labelledby="statusTitle">
+            <div class="section-head"><div><span class="eyebrow">采集健康度</span><h2 id="statusTitle">数据状态</h2></div></div>
+            <div class="status-summary"><article><span>最近采集</span><strong id="statusLastRun">--</strong></article><article><span>最近成功</span><strong id="statusLastSuccess">--</strong></article><article><span>最新公告日期</span><strong id="statusLatestDate">--</strong></article><article><span>连续失败</span><strong id="statusFailures">0</strong></article></div>
+            <div class="table-wrap"><table><thead><tr><th>数据源</th><th>接入状态</th><th>数据量</th><th>最近检查</th><th>最近成功</th><th>最新公告</th></tr></thead><tbody id="sourceStatusBody"></tbody></table></div>
+            <div class="status-legend"><span><i class="state-dot green"></i>正常</span><span><i class="state-dot yellow"></i>超过24小时</span><span><i class="state-dot red"></i>失败或超过48小时</span><span><i class="state-dot gray"></i>未接入</span></div>
+          </section>
+        </main>
+
+        <aside class="detail-panel" id="eventDetail" aria-label="公告与项目详情">
+          <div class="detail-head"><div><span class="eyebrow">当前项目</span><h2>业务详情</h2></div><span id="detailLevel" class="score-badge neutral">未选择</span></div>
+          <div id="detailContent" class="detail-empty"><strong>选择一条公告</strong><p>业务要素、公告证据和跟进状态将在这里展示。</p></div>
+        </aside>
+      </div>
     </div>
-
-    <script src="./app.js?v=20260710-3"></script>
+    <script src="./app.js?v=20260715-2"></script>
   </body>
 </html>

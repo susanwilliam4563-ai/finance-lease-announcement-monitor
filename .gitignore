@@ -4,3 +4,6 @@ __pycache__/
 site-dist/
 data/finance_lease_monitor.sqlite3
 data/records.js
+data/recent.json
+data/manifest.json
+data/years/
