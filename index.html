@@ -120,7 +120,7 @@
 
           <section class="view-panel" data-page="companies" aria-labelledby="companiesTitle">
             <div class="section-head"><div><span class="eyebrow">上市公司体系</span><h2 id="companiesTitle">上市公司雷达</h2><p>公司本部与子公司统一归集</p></div></div>
-            <div class="table-wrap"><table><thead><tr><th>上市公司</th><th>市场</th><th>性质</th><th>地区/行业</th><th>历史次数</th><th>近一年</th><th>披露金额</th><th>合作出租人</th><th>最近公告</th></tr></thead><tbody id="companyBody"></tbody></table></div>
+            <div class="table-wrap"><table><thead><tr><th>上市公司</th><th>市场</th><th>性质</th><th>地区/行业</th><th>总市值</th><th>历史次数</th><th>近一年</th><th>披露金额</th><th>合作出租人</th><th>最近公告</th></tr></thead><tbody id="companyBody"></tbody></table></div>
           </section>
 
           <section class="view-panel" data-page="lessors" aria-labelledby="lessorsTitle">
@@ -150,8 +150,8 @@
           <section class="view-panel" data-page="status" aria-labelledby="statusTitle">
             <div class="section-head"><div><span class="eyebrow">采集健康度</span><h2 id="statusTitle">数据状态</h2></div></div>
             <div class="status-summary"><article><span>最近采集</span><strong id="statusLastRun">--</strong></article><article><span>最近成功</span><strong id="statusLastSuccess">--</strong></article><article><span>最新公告日期</span><strong id="statusLatestDate">--</strong></article><article><span>连续失败</span><strong id="statusFailures">0</strong></article></div>
-            <div class="table-wrap"><table><thead><tr><th>数据源</th><th>接入状态</th><th>数据量</th><th>最近检查</th><th>最近成功</th><th>最新公告</th></tr></thead><tbody id="sourceStatusBody"></tbody></table></div>
-            <div class="status-legend"><span><i class="state-dot green"></i>正常</span><span><i class="state-dot yellow"></i>超过24小时</span><span><i class="state-dot red"></i>失败或超过48小时</span><span><i class="state-dot gray"></i>未接入</span></div>
+            <div class="table-wrap"><table><thead><tr><th>数据源</th><th>接入方式</th><th>接入状态</th><th>数据量</th><th>最近检查</th><th>最近成功</th><th>最新公告</th></tr></thead><tbody id="sourceStatusBody"></tbody></table></div>
+            <div class="status-legend"><span><i class="state-dot green"></i>直接采集正常或已覆盖</span><span><i class="state-dot yellow"></i>超过24小时</span><span><i class="state-dot red"></i>采集失败</span><span><i class="state-dot gray"></i>未自动接入</span></div>
           </section>
         </main>
 
@@ -161,6 +161,6 @@
         </aside>
       </div>
     </div>
-    <script src="./app.js?v=20260715-2"></script>
+    <script src="./app.js?v=20260716-1"></script>
   </body>
 </html>

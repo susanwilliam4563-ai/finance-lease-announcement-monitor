@@ -15,7 +15,7 @@ def main() -> None:
 
     for name in ("index.html", "styles.css", "app.js"):
         shutil.copy2(ROOT / name, OUTPUT / name)
-    for name in ("records.json", "recent.json", "manifest.json", "status.json"):
+    for name in ("records.json", "recent.json", "manifest.json", "profiles.json", "status.json"):
         shutil.copy2(ROOT / "data" / name, OUTPUT / "data" / name)
     shutil.copytree(ROOT / "data" / "years", OUTPUT / "data" / "years")
 

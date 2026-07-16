@@ -1,46 +1,132 @@
 {
   "deployment_mode": "static",
-  "generated_at": "2026-07-10 17:08:14",
-  "revision": "32f43d5615b47bc0",
-  "record_count": 2546,
+  "generated_at": "2026-07-16 12:56:14",
+  "revision": "58f1d06e64fb1a14",
+  "record_count": 4281,
   "earliest_announcement_date": "2021-01-01",
-  "latest_announcement_date": "2026-07-09",
+  "latest_announcement_date": "2026-07-16",
   "history_start_date": "2021-01-01",
   "latest_run": {
-    "id": 17,
-    "source": "巨潮资讯",
-    "start_date": "2026-06-26",
-    "end_date": "2026-07-10",
+    "id": 6,
+    "source": "港交所披露易",
+    "start_date": "2026-07-01",
+    "end_date": "2026-07-16",
     "status": "success",
-    "message": "fetched=141 kept=0",
-    "fetched_count": 141,
+    "message": "fetched=9 kept=0",
+    "fetched_count": 9,
     "kept_count": 0,
-    "started_at": "2026-07-10 09:08:10",
-    "finished_at": "2026-07-10 09:08:14"
+    "started_at": "2026-07-16 04:55:29",
+    "finished_at": "2026-07-16 04:55:34"
   },
   "latest_successful_run": {
-    "id": 17,
-    "source": "巨潮资讯",
-    "start_date": "2026-06-26",
-    "end_date": "2026-07-10",
+    "id": 6,
+    "source": "港交所披露易",
+    "start_date": "2026-07-01",
+    "end_date": "2026-07-16",
     "status": "success",
-    "message": "fetched=141 kept=0",
-    "fetched_count": 141,
+    "message": "fetched=9 kept=0",
+    "fetched_count": 9,
     "kept_count": 0,
-    "started_at": "2026-07-10 09:08:10",
-    "finished_at": "2026-07-10 09:08:14"
+    "started_at": "2026-07-16 04:55:29",
+    "finished_at": "2026-07-16 04:55:34"
   },
-  "data_as_of": "2026-07-10",
+  "data_as_of": "2026-07-16",
   "days_since_check": 0,
-  "source_counts": {
-    "巨潮资讯": 2546
+  "freshness_state": "green",
+  "consecutive_failures": 0,
+  "source_failure_streaks": {
+    "巨潮资讯": 0,
+    "港交所披露易": 0
   },
+  "source_counts": {
+    "巨潮资讯": 2553,
+    "港交所披露易": 1728
+  },
+  "source_statuses": [
+    {
+      "source": "巨潮资讯",
+      "mode": "direct",
+      "connected": true,
+      "state": "green",
+      "record_count": 2553,
+      "last_checked_at": "2026-07-16 04:55:16",
+      "last_success_at": "2026-07-16 04:55:16",
+      "latest_announcement_date": "2026-07-16",
+      "checked_through": "2026-07-16"
+    },
+    {
+      "source": "上海证券交易所",
+      "mode": "covered",
+      "connected": true,
+      "state": "green",
+      "record_count": 936,
+      "last_checked_at": "2026-07-16 04:55:16",
+      "last_success_at": "2026-07-16 04:55:16",
+      "latest_announcement_date": "2026-07-16",
+      "checked_through": "2026-07-16"
+    },
+    {
+      "source": "深圳证券交易所",
+      "mode": "covered",
+      "connected": true,
+      "state": "green",
+      "record_count": 1555,
+      "last_checked_at": "2026-07-16 04:55:16",
+      "last_success_at": "2026-07-16 04:55:16",
+      "latest_announcement_date": "2026-07-16",
+      "checked_through": "2026-07-16"
+    },
+    {
+      "source": "北京证券交易所",
+      "mode": "covered",
+      "connected": true,
+      "state": "green",
+      "record_count": 62,
+      "last_checked_at": "2026-07-16 04:55:16",
+      "last_success_at": "2026-07-16 04:55:16",
+      "latest_announcement_date": "2026-06-24",
+      "checked_through": "2026-07-16"
+    },
+    {
+      "source": "港交所披露易",
+      "mode": "direct",
+      "connected": true,
+      "state": "green",
+      "record_count": 1728,
+      "last_checked_at": "2026-07-16 04:55:34",
+      "last_success_at": "2026-07-16 04:55:34",
+      "latest_announcement_date": "2026-07-15",
+      "checked_through": "2026-07-16"
+    },
+    {
+      "source": "上市公司官网",
+      "mode": "reference",
+      "connected": true,
+      "state": "green",
+      "record_count": 592,
+      "last_checked_at": "2026-07-16 12:47:02",
+      "last_success_at": "2026-07-16 12:47:02",
+      "latest_announcement_date": null,
+      "checked_through": null
+    },
+    {
+      "source": "互联网/公众号",
+      "mode": "unconnected",
+      "connected": false,
+      "state": "unconnected",
+      "record_count": 0,
+      "last_checked_at": null,
+      "last_success_at": null,
+      "latest_announcement_date": null,
+      "checked_through": null
+    }
+  ],
   "page_poll_interval_seconds": 60,
   "auto_refresh": {
     "enabled": true,
     "interval_minutes": 60,
     "running": false,
-    "last_finished_at": "2026-07-10 17:08:14",
+    "last_finished_at": "2026-07-16 12:56:14",
     "next_run_at": null
   }
 }

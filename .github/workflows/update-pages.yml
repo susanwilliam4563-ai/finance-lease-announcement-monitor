@@ -56,6 +56,13 @@ jobs:
           END_DATE=$(TZ=Asia/Shanghai date +%F)
           python cninfo_updater.py --start "$START_DATE" --end "$END_DATE"
 
+      - name: 抓取港交所披露易公告
+        continue-on-error: true
+        run: |
+          START_DATE=$(TZ=Asia/Shanghai date -d "14 days ago" +%F)
+          END_DATE=$(TZ=Asia/Shanghai date +%F)
+          python hkex_updater.py --start "$START_DATE" --end "$END_DATE"
+
       - name: 补齐新增主体画像
         continue-on-error: true
         run: python eastmoney_profile_enricher.py
@@ -67,7 +74,7 @@ jobs:
         run: |
           git config user.name "finance-lease-monitor"
           git config user.email "finance-lease-monitor@users.noreply.github.com"
-          git add data/records.json
+          git add data/records.json data/profiles.json
           if ! git diff --cached --quiet; then
             git commit -m "data: update finance lease announcements"
             git push

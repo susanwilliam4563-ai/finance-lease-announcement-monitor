@@ -8,14 +8,14 @@
 {
   "id": "source:source_id_or_hash",
   "subject_name": "主体名称",
-  "subject_type": "A股上市公司|发债主体|子公司/关联方|待识别",
+  "subject_type": "A股上市公司|港股上市公司|发债主体|子公司/关联方|待识别",
   "stock_code": "证券代码",
   "bond_code": "债券代码",
   "region": "地区",
   "industry": "行业",
   "announcement_date": "YYYY-MM-DD",
   "title": "公告标题",
-  "source": "巨潮资讯|交易所|公司官网|预警通|互联网搜索",
+  "source": "巨潮资讯|港交所披露易|交易所|公司官网|预警通|互联网搜索",
   "source_class": "官方公告|发债披露|公司官网|预警通|互联网/公众号|其他来源",
   "source_reliability": "高|中高|中|线索|待复核",
   "source_url": "公告页面链接",
@@ -53,3 +53,24 @@
 - 巨潮/交易所抓取脚本输出 JSON 后，可直接导入本看板。
 - 预警通页面人工导出的数据应映射到同一数据契约。
 - 主体关系库应补充 `region`、`industry`、`subject_type`、`stock_code`、`bond_code`。
+
+## 主体画像快照
+
+`data/profiles.json` 以股票代码关联公告，主要字段包括：
+
+```json
+{
+  "stock_code": "600000",
+  "csrc_industry": "证监会行业分类",
+  "province": "注册地省份",
+  "website": "公司官网",
+  "actual_controller": "实际控制人",
+  "enterprise_nature": "中央国企|地方国企|民营企业|公众企业|外资企业",
+  "enterprise_nature_basis": "规则判定依据",
+  "market_cap": 10000000000,
+  "market_cap_date": "YYYY-MM-DD",
+  "market_cap_source": "行情来源"
+}
+```
+
+来源状态中的 `mode` 区分 `direct`（直接采集）、`covered`（通过巨潮覆盖）、`reference`（仅提供复核入口）和 `unconnected`（未自动接入）。

@@ -34,6 +34,7 @@ let lastServerRevision = "";
 let filterRunId = 0;
 let inputTimer = null;
 const recordStore = new Map();
+const profileStore = new Map();
 const loadedYears = new Set();
 const projectGroups = new Map();
 let subjectFrequency = new Map();
@@ -56,6 +57,7 @@ init();
 async function init() {
   bindEvents();
   if (window.matchMedia("(max-width: 780px)").matches) toggleMobileFilters();
+  await loadProfiles();
   await loadInitialRecords();
   statusPayload = await loadServerStatus();
   reindexRecords();
@@ -64,6 +66,20 @@ async function init() {
   await applyFilters();
   restoreSelectionFromLocation();
   startLiveSync(statusPayload?.page_poll_interval_seconds || 60);
+}
+
+async function loadProfiles() {
+  try {
+    const response = await fetch(cacheBustUrl("./data/profiles.json"), { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    profileStore.clear();
+    (payload.profiles || []).forEach((profile) => {
+      if (profile.stock_code) profileStore.set(String(profile.stock_code), profile);
+    });
+  } catch (error) {
+    profileStore.clear();
+  }
 }
 
 function bindEvents() {
@@ -302,6 +318,7 @@ async function syncFromServer() {
   if (!next || !previous || serverRevision(next) === previous) return;
   recordStore.clear();
   loadedYears.clear();
+  await loadProfiles();
   await loadInitialRecords();
   reindexRecords();
   populateFilters();
@@ -538,7 +555,7 @@ function renderCompanies() {
     groups.get(item.subject_name).push(item);
   });
   const rows = [...groups.entries()].map(([name, records]) => companyAggregate(name, records)).sort((a, b) => b.recent_count - a.recent_count || b.total_amount - a.total_amount).slice(0, 300);
-  els.companyBody.innerHTML = rows.length ? rows.map((item) => `<tr class="clickable" data-company="${escapeAttribute(item.name)}"><td><strong class="company-name">${escapeHtml(item.name)}</strong><span class="stock-code">${escapeHtml(item.stock_code)}</span></td><td>${escapeHtml(item.market)}</td><td>${escapeHtml(item.nature)}</td><td>${escapeHtml(item.region)}<span class="subline">${escapeHtml(shorten(item.industry, 18))}</span></td><td>${item.count}</td><td>${item.recent_count}</td><td class="amount-value">${formatAmount(item.total_amount)}</td><td>${item.lessors}</td><td>${escapeHtml(item.latest_date)}</td></tr>`).join("") : '<tr><td colspan="9" class="empty-state">暂无数据</td></tr>';
+  els.companyBody.innerHTML = rows.length ? rows.map((item) => `<tr class="clickable" data-company="${escapeAttribute(item.name)}"><td><strong class="company-name">${escapeHtml(item.name)}</strong><span class="stock-code">${escapeHtml(item.stock_code)}</span></td><td>${escapeHtml(item.market)}</td><td>${escapeHtml(item.nature)}</td><td>${escapeHtml(item.region)}<span class="subline">${escapeHtml(shorten(item.industry, 18))}</span></td><td>${formatMarketCap(item.market_cap, "")}</td><td>${item.count}</td><td>${item.recent_count}</td><td class="amount-value">${formatAmount(item.total_amount)}</td><td>${item.lessors}</td><td>${escapeHtml(item.latest_date)}</td></tr>`).join("") : '<tr><td colspan="10" class="empty-state">暂无数据</td></tr>';
 }
 
 function renderLessors() {
@@ -619,7 +636,7 @@ function renderStatus() {
   setText("statusLatestDate", statusPayload.latest_announcement_date || "--");
   setText("statusFailures", statusPayload.consecutive_failures || 0);
   const statuses = statusPayload.source_statuses || buildFallbackSourceStatuses(statusPayload);
-  els.sourceStatusBody.innerHTML = statuses.map((item) => `<tr><td><strong>${escapeHtml(item.source)}</strong></td><td><span class="state-label ${sourceStateClass(item.state)}">${escapeHtml(sourceStateText(item))}</span></td><td>${Number(item.record_count || 0).toLocaleString("zh-CN")}</td><td>${escapeHtml(formatDateTime(item.last_checked_at || "--"))}</td><td>${escapeHtml(formatDateTime(item.last_success_at || "--"))}</td><td>${escapeHtml(item.latest_announcement_date || "--")}</td></tr>`).join("");
+  els.sourceStatusBody.innerHTML = statuses.map((item) => `<tr><td><strong>${escapeHtml(item.source)}</strong></td><td>${escapeHtml(sourceModeText(item.mode))}</td><td><span class="state-label ${sourceStateClass(item.state)}">${escapeHtml(sourceStateText(item))}</span></td><td>${Number(item.record_count || 0).toLocaleString("zh-CN")}</td><td>${escapeHtml(formatDateTime(item.last_checked_at || "--"))}</td><td>${escapeHtml(formatDateTime(item.last_success_at || "--"))}</td><td>${escapeHtml(item.latest_announcement_date || "--")}</td></tr>`).join("");
 }
 
 function switchView(view) {
@@ -677,9 +694,9 @@ function renderRecordDetail(item) {
   els.detailLevel.className = `score-badge ${opportunityClass(item)}`;
   els.detailContent.className = "detail-body";
   els.detailContent.innerHTML = `
-    <div class="detail-title-block"><span>${escapeHtml(item.announcement_date)} · ${escapeHtml(item.source)}</span><h3>${escapeHtml(item.subject_name)}</h3><p>${escapeHtml(item.title)}</p><div class="detail-actions">${item.source_url && item.source_url !== "#" ? `<a class="primary-link" href="${escapeAttribute(item.source_url)}" target="_blank" rel="noreferrer">公告原文</a>` : ""}${item.pdf_url ? `<a href="${escapeAttribute(item.pdf_url)}" target="_blank" rel="noreferrer">PDF</a>` : ""}<button type="button" data-detail-action="watch-company">${workspace.watchlist.includes(item.subject_name) ? "取消重点公司" : "加入重点公司"}</button><button type="button" data-detail-action="toggle-favorite">${work.favorite ? "取消收藏" : "收藏"}</button></div></div>
+    <div class="detail-title-block"><span>${escapeHtml(item.announcement_date)} · ${escapeHtml(item.source)}</span><h3>${escapeHtml(item.subject_name)}</h3><p>${escapeHtml(item.title)}</p><div class="detail-actions">${item.source_url && item.source_url !== "#" ? `<a class="primary-link" href="${escapeAttribute(item.source_url)}" target="_blank" rel="noreferrer">公告原文</a>` : ""}${item.pdf_url && item.pdf_url !== item.source_url ? `<a href="${escapeAttribute(item.pdf_url)}" target="_blank" rel="noreferrer">PDF</a>` : ""}${item.exchange_verification_url ? `<a href="${escapeAttribute(item.exchange_verification_url)}" target="_blank" rel="noreferrer">交易所复核</a>` : ""}${item.company_website ? `<a href="${escapeAttribute(item.company_website)}" target="_blank" rel="noreferrer">公司官网</a>` : ""}<button type="button" data-detail-action="watch-company">${workspace.watchlist.includes(item.subject_name) ? "取消重点公司" : "加入重点公司"}</button><button type="button" data-detail-action="toggle-favorite">${work.favorite ? "取消收藏" : "收藏"}</button></div></div>
     <section class="detail-section"><h3>机会与风险评估</h3><div class="score-grid"><div><span>业务机会</span><strong>${item.opportunity_score}</strong></div><div><span>风险关注</span><strong>${item.risk_score}</strong></div><div><span>信息完整度</span><strong>${item.completeness_score}%</strong></div></div><p><span class="score-badge ${opportunityClass(item)}">${escapeHtml(item.opportunity_label)}</span></p><p>${escapeHtml(item.one_liner)}</p><p class="muted">${escapeHtml(riskAdvice(item))}</p></section>
-    <section class="detail-section"><h3>上市公司属性</h3><dl class="field-grid"><div><dt>股票代码</dt><dd>${escapeHtml(item.stock_code || "待补充")}</dd></div><div><dt>上市市场</dt><dd>${escapeHtml(item.market)}</dd></div><div><dt>企业性质</dt><dd>${escapeHtml(item.enterprise_nature)}</dd></div><div><dt>实际控制人</dt><dd>${escapeHtml(item.actual_controller)}</dd></div><div><dt>注册地</dt><dd>${escapeHtml(item.region)}</dd></div><div><dt>证监会行业</dt><dd>${escapeHtml(item.industry)}</dd></div></dl></section>
+    <section class="detail-section"><h3>上市公司属性</h3><dl class="field-grid"><div><dt>股票代码</dt><dd>${escapeHtml(item.stock_code || "待补充")}</dd></div><div><dt>上市市场</dt><dd>${escapeHtml(item.market)}</dd></div><div><dt>企业性质</dt><dd>${escapeHtml(item.enterprise_nature)}</dd></div><div><dt>性质依据</dt><dd>${escapeHtml(item.enterprise_nature_basis || "待补充")}</dd></div><div><dt>实际控制人</dt><dd>${escapeHtml(item.actual_controller)}</dd></div><div><dt>注册地</dt><dd>${escapeHtml(item.region)}</dd></div><div><dt>证监会行业</dt><dd>${escapeHtml(item.industry)}</dd></div><div><dt>总市值</dt><dd>${formatMarketCap(item.market_cap, item.market_cap_date)}</dd></div><div><dt>市值来源</dt><dd>${escapeHtml(item.market_cap_source || "待补充")}</dd></div><div><dt>画像来源</dt><dd>${escapeHtml(item.profile_source || "待补充")}</dd></div></dl></section>
     <section class="detail-section"><h3>融资租赁要素</h3><dl class="field-grid"><div><dt>实际承租人</dt><dd>${escapeHtml(item.actual_lessee)}</dd></div><div><dt>与上市公司关系</dt><dd>${escapeHtml(item.lessee_relation)}</dd></div><div><dt>出租人</dt><dd>${escapeHtml(item.counterparty)}</dd></div><div><dt>出租人类型</dt><dd>${escapeHtml(item.lessor_type)}</dd></div><div><dt>融资金额</dt><dd>${escapeHtml(item.amount_original)}</dd></div><div><dt>金额口径</dt><dd>${escapeHtml(item.amount_type)}</dd></div><div><dt>融资期限</dt><dd>${escapeHtml(item.term_original)}</dd></div><div><dt>利率/综合成本</dt><dd>${escapeHtml(item.financing_cost)}</dd></div><div><dt>租赁物</dt><dd>${escapeHtml(item.leased_asset)}</dd></div><div><dt>标准分类</dt><dd>${escapeHtml(item.asset_category)}</dd></div><div><dt>资金用途</dt><dd>${escapeHtml(item.capital_use)}</dd></div><div><dt>担保/增信</dt><dd>${escapeHtml(item.guarantee_method)}</dd></div><div><dt>决策程序</dt><dd>${escapeHtml(item.decision_process)}</dd></div><div><dt>是否关联交易</dt><dd>${escapeHtml(item.related_party)}</dd></div><div><dt>业务类型</dt><dd>${escapeHtml(item.business_types.join("、"))}</dd></div><div><dt>业务阶段</dt><dd>${escapeHtml(item.business_stage)}</dd></div></dl></section>
     <section class="detail-section"><h3>公告证据</h3>${unique(item.snippets).slice(0, 4).map((snippet) => `<blockquote>${highlightKeywords(snippet, item.matched_keywords)}</blockquote>`).join("") || '<p class="muted">当前仅有公告元数据，正文待补充。</p>'}</section>
     <section class="detail-section"><h3>同一项目时间线</h3><div class="timeline">${project.map((record) => `<div class="timeline-item"><strong>${escapeHtml(record.announcement_date)} · ${escapeHtml(record.business_stage)}</strong><span>${escapeHtml(record.title)}</span></div>`).join("")}</div></section>
@@ -698,7 +715,7 @@ function selectCompany(name) {
   els.detailLevel.textContent = `${records.length}次`;
   els.detailLevel.className = "score-badge neutral";
   els.detailContent.className = "detail-body";
-  els.detailContent.innerHTML = `<div class="detail-title-block"><span>上市公司集团页</span><h3>${escapeHtml(name)}</h3><p>${escapeHtml(summary.stock_code)} · ${escapeHtml(summary.market)} · ${escapeHtml(summary.nature)}</p><div class="detail-actions"><button type="button" data-detail-action="watch-company" data-company="${escapeAttribute(name)}">${workspace.watchlist.includes(name) ? "取消重点公司" : "加入重点公司"}</button></div></div><section class="detail-section"><h3>公司画像</h3><dl class="field-grid"><div><dt>实际控制人</dt><dd>${escapeHtml(records[0].actual_controller)}</dd></div><div><dt>地区</dt><dd>${escapeHtml(summary.region)}</dd></div><div><dt>行业</dt><dd>${escapeHtml(summary.industry)}</dd></div><div><dt>历史租赁次数</dt><dd>${records.length}</dd></div><div><dt>历史披露金额</dt><dd>${formatAmount(summary.total_amount)}</dd></div><div><dt>近一年次数</dt><dd>${summary.recent_count}</dd></div><div><dt>最近租赁</dt><dd>${escapeHtml(summary.latest_date)}</dd></div><div><dt>未完成计划</dt><dd>${records.filter((item) => isDevelopmentStage(item.business_stage)).length}</dd></div></dl></section><section class="detail-section"><h3>下属承租主体</h3><p>${escapeHtml(subsidiaries.join("、") || "尚未识别子公司承租主体")}</p></section><section class="detail-section"><h3>历史偏好</h3><p>合作出租人：${escapeHtml(lessors.join("、") || "未披露")}</p><p>租赁物：${escapeHtml(assets.join("、") || "未披露")}</p><p>担保结构：${escapeHtml(guarantees.join("、") || "未披露")}</p></section><section class="detail-section"><h3>最近记录</h3><div class="timeline">${records.slice(0, 12).map((item) => `<div class="timeline-item"><strong>${escapeHtml(item.announcement_date)} · ${escapeHtml(item.business_stage)}</strong><span>${escapeHtml(item.title)}</span></div>`).join("")}</div></section>`;
+  els.detailContent.innerHTML = `<div class="detail-title-block"><span>上市公司集团页</span><h3>${escapeHtml(name)}</h3><p>${escapeHtml(summary.stock_code)} · ${escapeHtml(summary.market)} · ${escapeHtml(summary.nature)}</p><div class="detail-actions">${summary.company_website ? `<a class="primary-link" href="${escapeAttribute(summary.company_website)}" target="_blank" rel="noreferrer">公司官网</a>` : ""}<button type="button" data-detail-action="watch-company" data-company="${escapeAttribute(name)}">${workspace.watchlist.includes(name) ? "取消重点公司" : "加入重点公司"}</button></div></div><section class="detail-section"><h3>公司画像</h3><dl class="field-grid"><div><dt>企业性质</dt><dd>${escapeHtml(summary.nature)}</dd></div><div><dt>性质依据</dt><dd>${escapeHtml(summary.enterprise_nature_basis || "待补充")}</dd></div><div><dt>实际控制人</dt><dd>${escapeHtml(summary.actual_controller)}</dd></div><div><dt>地区</dt><dd>${escapeHtml(summary.region)}</dd></div><div><dt>行业</dt><dd>${escapeHtml(summary.industry)}</dd></div><div><dt>总市值</dt><dd>${formatMarketCap(summary.market_cap, summary.market_cap_date)}</dd></div><div><dt>市值来源</dt><dd>${escapeHtml(summary.market_cap_source || "待补充")}</dd></div><div><dt>历史租赁次数</dt><dd>${records.length}</dd></div><div><dt>历史披露金额</dt><dd>${formatAmount(summary.total_amount)}</dd></div><div><dt>近一年次数</dt><dd>${summary.recent_count}</dd></div><div><dt>最近租赁</dt><dd>${escapeHtml(summary.latest_date)}</dd></div><div><dt>未完成计划</dt><dd>${records.filter((item) => isDevelopmentStage(item.business_stage)).length}</dd></div><div><dt>画像来源</dt><dd>${escapeHtml(summary.profile_source || "待补充")}</dd></div></dl></section><section class="detail-section"><h3>下属承租主体</h3><p>${escapeHtml(subsidiaries.join("、") || "尚未识别子公司承租主体")}</p></section><section class="detail-section"><h3>历史偏好</h3><p>合作出租人：${escapeHtml(lessors.join("、") || "未披露")}</p><p>租赁物：${escapeHtml(assets.join("、") || "未披露")}</p><p>担保结构：${escapeHtml(guarantees.join("、") || "未披露")}</p></section><section class="detail-section"><h3>最近记录</h3><div class="timeline">${records.slice(0, 12).map((item) => `<div class="timeline-item"><strong>${escapeHtml(item.announcement_date)} · ${escapeHtml(item.business_stage)}</strong><span>${escapeHtml(item.title)}</span></div>`).join("")}</div></section>`;
 }
 
 function selectLessor(name) {
@@ -798,6 +815,8 @@ function exportCsv() {
 }
 
 function normalizeRecord(item, index) {
+  const stockCode = String(item.stock_code || item["证券代码"] || "");
+  const profile = profileStore.get(stockCode) || {};
   const baseText = [item.title, item.summary, ...arrayValue(item.snippets)].filter(Boolean).join(" ");
   const amountOriginal = item.amount || item["金额"] || "未披露";
   const termOriginal = item.term || item["期限"] || "未披露";
@@ -806,10 +825,10 @@ function normalizeRecord(item, index) {
     id: item.id || `import:${index}`,
     subject_name: item.subject_name || item.stock_name || item.company_name || item["主体名称"] || "未命名主体",
     subject_type: item.subject_type || item["主体类型"] || "待识别",
-    stock_code: String(item.stock_code || item["证券代码"] || ""),
+    stock_code: stockCode,
     bond_code: item.bond_code || item["债券代码"] || "",
-    region: item.region || item["地区"] || "待补充",
-    industry: item.industry || item["行业"] || "待补充",
+    region: disclosedOr(item.region || item["地区"], profile.province, "待补充"),
+    industry: disclosedOr(item.industry || item["行业"], profile.csrc_industry, "待补充"),
     announcement_date: item.announcement_date || item.publish_date || item["公告日期"] || "",
     title: item.title || item["公告标题"] || "",
     source: item.source || item["公告来源"] || "",
@@ -833,12 +852,18 @@ function normalizeRecord(item, index) {
     snippets: arrayValue(item.snippets || item.matched_snippets || item["命中片段"]),
     attention_level: item.attention_level || "C",
     notes: item.notes || item["备注"] || "",
-    enterprise_nature: item.enterprise_nature || item.company_nature || item["企业性质"] || "待补充",
-    actual_controller: item.actual_controller || item["实际控制人"] || "待补充",
-    market_cap: parseNumber(item.market_cap || item["市值"]),
+    enterprise_nature: disclosedOr(item.enterprise_nature || item.company_nature || item["企业性质"], profile.enterprise_nature, "待补充"),
+    enterprise_nature_basis: item.enterprise_nature_basis || profile.enterprise_nature_basis || "",
+    actual_controller: disclosedOr(item.actual_controller || item["实际控制人"], profile.actual_controller, "待补充"),
+    market_cap: parseNumber(item.market_cap || item["市值"] || profile.market_cap),
+    market_cap_date: item.market_cap_date || profile.market_cap_date || "",
+    market_cap_source: item.market_cap_source || profile.market_cap_source || "",
+    company_website: item.company_website || profile.website || "",
+    profile_source: item.profile_source || profile.profile_source || "",
     publication_entity: item.publication_entity || item.subject_name || "待补充"
   };
   record.market = item.market || item.listing_market || inferMarket(record.stock_code, record.subject_type);
+  record.exchange_verification_url = exchangeVerificationUrl(record.market, record.stock_code);
   record.source_class = item.source_class || classifySource(record.source);
   record.source_reliability = item.source_reliability || reliabilityFor(record.source_class);
   record.lessee_relation = item.lessee_relation || item["承租关系"] || inferLesseeRelation(baseText, record.lease_role);
@@ -945,7 +970,7 @@ function inferActualLessee(text, subject, relation) {
 
 function inferBusinessTypes(text, announcedType, relatedParty) {
   const types = [];
-  const rules = [[/提前还款|提前清偿/, "提前还款"], [/终止|解除/, "合同终止"], [/应收租赁款.*转让/, "应收租赁款转让"], [/租赁资产.*转让/, "租赁资产转让"], [/售后回租|融资性售后回租/, "售后回租"], [/直接租赁|直租/, "直接租赁"], [/经营租赁/, "经营租赁"], [/跨境.*租赁|境外.*租赁/, "跨境融资租赁"], [/厂商租赁/, "厂商租赁"], [/联合租赁/, "联合租赁"], [/框架协议/, "融资租赁框架协议"], [/额度|授信/, "融资租赁额度"], [/担保/, "担保公告"], [/关联交易/, "关联交易公告"], [/签署|融资租赁合同/, "合同签署公告"], [/进展/, "项目进展公告"]];
+  const rules = [[/提前还款|提前清偿/, "提前还款"], [/终止|解除/, "合同终止"], [/应收租赁款.*转让|應收租賃款.*轉讓/, "应收租赁款转让"], [/租赁资产.*转让|租賃資產.*轉讓/, "租赁资产转让"], [/售后回租|售後回租|售後租回|融资性售后回租/, "售后回租"], [/直接租赁|直接租賃|直租/, "直接租赁"], [/经营租赁|經營租賃/, "经营租赁"], [/跨境.*租赁|境外.*租赁|跨境.*租賃|境外.*租賃/, "跨境融资租赁"], [/厂商租赁|廠商租賃/, "厂商租赁"], [/联合租赁|聯合租賃/, "联合租赁"], [/框架协议|框架協議/, "融资租赁框架协议"], [/额度|授信|額度/, "融资租赁额度"], [/担保|擔保/, "担保公告"], [/关联交易|關連交易/, "关联交易公告"], [/签署|簽署|訂立|融资租赁合同|融資租賃合同/, "合同签署公告"], [/进展|進展/, "项目进展公告"]];
   rules.forEach(([pattern, label]) => { if (pattern.test(text)) types.push(label); });
   if (relatedParty === "是" && !types.includes("关联交易公告")) types.push("关联融资租赁");
   if (announcedType && !types.length) types.push(announcedType);
@@ -964,7 +989,7 @@ function inferBusinessStage(text, counterparty) {
   if (/框架协议/.test(text)) return "签署框架协议";
   if (/已提款|完成提款|租金支付/.test(text)) return "已完成提款";
   if (/进展|实施中/.test(text)) return "项目实施中";
-  if (/签订|签署|融资租赁合同/.test(text)) return "签署正式合同";
+  if (/签订|簽訂|签署|簽署|訂立|融资租赁合同|融資租賃合同/.test(text)) return "签署正式合同";
   if (/拟|计划|意向/.test(text)) return "初步计划";
   return "待识别";
 }
@@ -1009,11 +1034,11 @@ function inferDecisionProcess(text) {
 function parseAmount(value) {
   if (!isDisclosed(value)) return 0;
   const text = String(value).replaceAll(",", "").replace(/\s/g, "");
-  const match = text.match(/(?:不超过|上限为|金额为|融资额度为|人民币)?([0-9]+(?:\.[0-9]+)?)(万亿|亿|万|元)?/);
+  const match = text.match(/(?:不超过|不超過|上限为|上限為|金额为|金額為|融资额度为|融資額度為|人民币|港币|港幣)?([0-9]+(?:\.[0-9]+)?)(万亿|萬億|亿港元|億港元|百萬港元|万港元|萬港元|亿|億|万|萬|港元|元)?/);
   if (!match) return 0;
   const number = Number(match[1]);
-  const unit = match[2] || (text.includes("万元") ? "万" : text.includes("亿元") ? "亿" : "元");
-  return Math.round(number * ({ "万亿": 1e12, "亿": 1e8, "万": 1e4, "元": 1 }[unit] || 1));
+  const unit = match[2] || (/[万萬]元/.test(text) ? "万" : /[亿億]元/.test(text) ? "亿" : "元");
+  return Math.round(number * ({ "万亿": 1e12, "萬億": 1e12, "亿港元": 1e8, "億港元": 1e8, "百萬港元": 1e6, "万港元": 1e4, "萬港元": 1e4, "亿": 1e8, "億": 1e8, "万": 1e4, "萬": 1e4, "港元": 1, "元": 1 }[unit] || 1));
 }
 
 function parseTermMonths(value) {
@@ -1062,7 +1087,7 @@ function companyRadarRecords() {
 function companyAggregate(name, records) {
   const latest = [...records].sort(sortByDateDesc)[0];
   const oneYearAgo = addDays(todayText(), -364);
-  return { name, stock_code: latest.stock_code, market: latest.market, nature: latest.enterprise_nature, region: latest.region, industry: latest.industry, count: records.length, recent_count: records.filter((item) => item.announcement_date >= oneYearAgo).length, total_amount: sumAmount(records), lessors: new Set(records.map((item) => item.counterparty).filter(isDisclosed)).size, latest_date: latest.announcement_date };
+  return { name, stock_code: latest.stock_code, market: latest.market, nature: latest.enterprise_nature, enterprise_nature_basis: latest.enterprise_nature_basis, actual_controller: latest.actual_controller, region: latest.region, industry: latest.industry, market_cap: latest.market_cap, market_cap_date: latest.market_cap_date, market_cap_source: latest.market_cap_source, company_website: latest.company_website, profile_source: latest.profile_source, count: records.length, recent_count: records.filter((item) => item.announcement_date >= oneYearAgo).length, total_amount: sumAmount(records), lessors: new Set(records.map((item) => item.counterparty).filter(isDisclosed)).size, latest_date: latest.announcement_date };
 }
 
 function lessorAggregate(name, records) {
@@ -1090,16 +1115,19 @@ function dateDiff(start, end) { return Math.round((new Date(`${end}T12:00:00`) -
 function sortByDateDesc(a, b) { return b.announcement_date.localeCompare(a.announcement_date) || a.subject_name.localeCompare(b.subject_name, "zh-CN"); }
 function sumAmount(records) { return records.reduce((sum, item) => sum + (item.amount_numeric || 0), 0); }
 function formatAmount(value) { if (!value) return "未披露"; if (value >= 1e8) return `${(value / 1e8).toLocaleString("zh-CN", { maximumFractionDigits: 2 })}亿元`; return `${(value / 1e4).toLocaleString("zh-CN", { maximumFractionDigits: 0 })}万元`; }
+function formatMarketCap(value, asOf) { if (!value) return "待补充"; const amount = formatAmount(value); return asOf ? `${amount}（${asOf}）` : amount; }
 function parseNumber(value) { const number = Number(String(value || "").replace(/[^0-9.]/g, "")); return Number.isFinite(number) ? number : 0; }
+function disclosedOr(primary, fallback, emptyValue) { return isDisclosed(primary) ? primary : isDisclosed(fallback) ? fallback : emptyValue; }
 function clamp(value, min, max) { return Math.max(min, Math.min(max, Math.round(value))); }
 function isDevelopmentStage(stage) { return ["初步计划", "董事会审议", "股东大会审议", "授权融资额度", "出租人待定", "出租人招标"].includes(stage); }
 function isPending(item) { return /\u5f85|\u4ec5\u516c\u544a\u5143\u6570\u636e|\u7ebf\u7d22/.test(`${item.review_status}${item.source_reliability}`); }
 function isDisclosed(value) { return Boolean(value) && !/\u672a\u62ab\u9732|\u5f85\u8865\u5145|\u5f85\u8bc6\u522b|\u5f85\u5b9a|\u6682\u65e0|^--$/.test(String(value)); }
-function cleanCounterparty(value) { if (!isDisclosed(value)) return "未披露"; return String(value).split(/(?:（[\u4e00-\u5341\d]+）|\([\u4e00-\u5341\d]+\)|担保方式|担保的本金|融资期限|租赁物|。|；)/)[0].trim().replace(/[，,:：]+$/, "") || "未披露"; }
+function cleanCounterparty(value) { if (!isDisclosed(value)) return "未披露"; return String(value).split(/(?:（[\u4e00-\u5341\d]+）|\([\u4e00-\u5341\d]+\)|(?:[12][、.．]\s*)?(?:承租人|保证人|保證人|担保人|擔保人)[：:]?|担保方式|担保的本金|融资期限|租赁物|。|；)/)[0].trim().replace(/[，,:：]+$/, "") || "未披露"; }
 function cleanEntityName(value) { return String(value).replace(/^(?:为|由)/, "").replace(/[，。；:：]+$/, "").trim(); }
 function normalizeName(value) { return String(value).replace(/[（(].*$/, "").replace(/\s/g, "").slice(0, 36); }
 function classifySource(source) { if (/巨潮|交易所|上交所|深交所|北交所|披露易/i.test(source)) return "官方公告"; if (/债券|上清所|中债|交易商协会/.test(source)) return "发债披露"; if (/公司官网|投资者关系/.test(source)) return "公司官网"; if (/预警通/.test(source)) return "预警通"; return source ? "其他来源" : "待识别来源"; }
 function reliabilityFor(sourceClass) { return { "官方公告": "高", "发债披露": "高", "公司官网": "中高", "预警通": "中" }[sourceClass] || "待复核"; }
+function exchangeVerificationUrl(market, code) { if (market === "沪市主板" || market === "科创板") return code ? `https://www.sse.com.cn/assortment/stock/list/info/announcement/index.shtml?productId=${encodeURIComponent(code)}` : "https://www.sse.com.cn/disclosure/listedinfo/announcement/"; if (market === "深市主板" || market === "创业板") return "https://www.szse.cn/disclosure/notice/company/index.html"; if (market === "北交所") return "https://www.bse.cn/disclosure/announcement.html"; if (market === "港股主板") return "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=zh"; return ""; }
 function extractLabeledValue(text, labels) { for (const label of labels) { const match = text.match(new RegExp(`${label}[\\s：:]*([^\\n；。]{2,60})`)); if (match?.[1]) return match[1].trim(); } return ""; }
 function topKeys(counts, limit) { return Object.entries(counts).filter(([key]) => isDisclosed(key)).sort((a, b) => b[1] - a[1]).slice(0, limit).map(([key]) => key); }
 function topArrayValues(records, key, limit) { const counts = {}; records.flatMap((item) => item[key] || []).filter(isDisclosed).forEach((value) => { counts[value] = (counts[value] || 0) + 1; }); return topKeys(counts, limit); }
@@ -1109,9 +1137,10 @@ function opportunityTagClass(label) { if (label === "高风险监测事项") ret
 function shortOpportunityLabel(label) { return label.replace("业务线索", "线索").replace("业务信息", "信息").replace("同业项目", "同业").replace("监测事项", "监测"); }
 function riskAdvice(item) { if (item.risk_score >= 75) return "风险信号较多，建议同步核查流动性、担保余额、监管问询和债务到期。"; if (item.risk_score >= 55) return "建议核查担保结构、关联交易和近期重复融资情况。"; return "当前公告未见明显高风险信号，仍需以公告原文和财务数据复核。"; }
 function workStateClass(status) { if (["已立项", "已拜访", "已联系"].includes(status)) return "success"; if (["待联系", "重点关注"].includes(status)) return "warning"; if (["排除", "暂不跟进"].includes(status)) return "error"; return "info"; }
-function sourceStateText(item) { if (!item.connected) return "未接入"; return item.state === "green" ? "正常" : item.state === "yellow" ? "延迟" : "异常"; }
+function sourceStateText(item) { if (!item.connected) return "未接入"; if (item.mode === "covered") return item.state === "green" ? "已覆盖" : item.state === "yellow" ? "覆盖延迟" : "覆盖异常"; if (item.mode === "reference") return "可复核"; return item.state === "green" ? "正常" : item.state === "yellow" ? "延迟" : "异常"; }
+function sourceModeText(mode) { return { direct: "直接采集", covered: "巨潮覆盖", reference: "复核入口", unconnected: "未自动接入" }[mode] || "待确认"; }
 function sourceStateClass(state) { return state === "green" ? "success" : state === "yellow" ? "warning" : state === "red" ? "error" : "info"; }
-function buildFallbackSourceStatuses(payload) { const expected = ["巨潮资讯", "上海证券交易所", "深圳证券交易所", "北京证券交易所", "港交所披露易", "上市公司官网"]; return expected.map((source) => ({ source, connected: Boolean(payload.source_counts?.[source]), state: payload.source_counts?.[source] ? (payload.freshness_state || "green") : "unconnected", record_count: payload.source_counts?.[source] || 0, last_checked_at: payload.latest_run?.finished_at, last_success_at: payload.latest_successful_run?.finished_at, latest_announcement_date: payload.source_counts?.[source] ? payload.latest_announcement_date : null })); }
+function buildFallbackSourceStatuses(payload) { const modes = { "巨潮资讯": "direct", "上海证券交易所": "covered", "深圳证券交易所": "covered", "北京证券交易所": "covered", "港交所披露易": "direct", "上市公司官网": "reference", "互联网/公众号": "unconnected" }; return Object.entries(modes).map(([source, mode]) => ({ source, mode, connected: Boolean(payload.source_counts?.[source]), state: payload.source_counts?.[source] ? (payload.freshness_state || "green") : "unconnected", record_count: payload.source_counts?.[source] || 0, last_checked_at: payload.latest_run?.finished_at, last_success_at: payload.latest_successful_run?.finished_at, latest_announcement_date: payload.source_counts?.[source] ? payload.latest_announcement_date : null })); }
 function eventHref(id) { return `#event=${encodeURIComponent(id)}`; }
 function restoreSelectionFromLocation() { if (!location.hash.startsWith("#event=")) return; const id = decodeURIComponent(location.hash.slice(7)); if (recordStore.has(id)) selectRecord(id, false); }
 function formatDateTime(value) { if (!value || value === "--") return "--"; const parsed = new Date(value.replace(" ", "T")); return Number.isNaN(parsed.getTime()) ? value : parsed.toLocaleString("zh-CN", { month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false }); }

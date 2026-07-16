@@ -102,6 +102,19 @@ def main() -> None:
         encoding="utf-8",
     )
 
+    profile_rows = []
+    if conn.execute("select 1 from sqlite_master where type='table' and name='subject_profiles'").fetchone():
+        profile_rows = [dict(row) for row in conn.execute("select * from subject_profiles order by stock_code").fetchall()]
+    profiles_payload = {
+        "generated_at": generated_at,
+        "count": len(profile_rows),
+        "profiles": profile_rows,
+    }
+    (data_dir / "profiles.json").write_text(
+        json.dumps(profiles_payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
     latest = conn.execute("select * from refresh_runs order by id desc limit 1").fetchone()
     latest_success = conn.execute(
         "select * from refresh_runs where status='success' order by id desc limit 1"
@@ -113,35 +126,18 @@ def main() -> None:
         row["source"]: row["count"]
         for row in conn.execute("select source, count(*) as count from records group by source").fetchall()
     }
-    recent_runs = conn.execute("select * from refresh_runs order by id desc limit 50").fetchall()
-    consecutive_failures = 0
-    for run in recent_runs:
-        if run["status"] == "success":
-            break
-        consecutive_failures += 1
+    source_statuses = build_source_statuses(conn, source_counts, profile_rows)
+    direct_runs = [item for item in source_statuses if item["mode"] == "direct"]
+    successful_end_dates = [item["checked_through"] for item in direct_runs if item.get("checked_through")]
+    if successful_end_dates:
+        data_as_of = min(successful_end_dates)
     days_since_check = (date.today() - date.fromisoformat(data_as_of)).days if data_as_of else None
-    latest_failed = bool(latest and latest["status"] == "failed")
-    freshness_state = "red" if latest_failed or (days_since_check is not None and days_since_check > 2) else "yellow" if days_since_check and days_since_check > 1 else "green"
-    expected_sources = [
-        "巨潮资讯",
-        "上海证券交易所",
-        "深圳证券交易所",
-        "北京证券交易所",
-        "港交所披露易",
-        "上市公司官网",
-    ]
-    source_statuses = []
-    for source in expected_sources:
-        connected = source in source_counts
-        source_statuses.append({
-            "source": source,
-            "connected": connected,
-            "state": freshness_state if connected else "unconnected",
-            "record_count": source_counts.get(source, 0),
-            "last_checked_at": latest["finished_at"] if connected and latest else None,
-            "last_success_at": latest_success["finished_at"] if connected and latest_success else None,
-            "latest_announcement_date": newest if connected else None,
-        })
+    failure_streaks = {
+        item["source"]: source_failure_streak(conn, item["source"])
+        for item in direct_runs
+    }
+    consecutive_failures = max(failure_streaks.values(), default=0)
+    freshness_state = "red" if any(item["state"] == "red" for item in direct_runs) else "yellow" if days_since_check and days_since_check > 1 else "green"
     revision_source = f"{generated_at}|{len(records)}|{data_as_of}|{latest_success['finished_at'] if latest_success else ''}"
     status = {
         "deployment_mode": "static",
@@ -157,6 +153,7 @@ def main() -> None:
         "days_since_check": days_since_check,
         "freshness_state": freshness_state,
         "consecutive_failures": consecutive_failures,
+        "source_failure_streaks": failure_streaks,
         "source_counts": source_counts,
         "source_statuses": source_statuses,
         "page_poll_interval_seconds": 60,
@@ -173,6 +170,94 @@ def main() -> None:
         encoding="utf-8",
     )
     print(f"exported {len(rows)} records to {data_dir}")
+
+
+def build_source_statuses(conn, source_counts: dict[str, int], profiles: list[dict]) -> list[dict]:
+    run_rows = conn.execute(
+        """
+        select r.* from refresh_runs r
+        join (select source, max(id) as id from refresh_runs group by source) latest on latest.id=r.id
+        """
+    ).fetchall()
+    runs = {row["source"]: dict(row) for row in run_rows}
+    market_counts = {
+        "上海证券交易所": conn.execute("select count(*) as count from records where source='巨潮资讯' and stock_code glob '6*'").fetchone()["count"],
+        "深圳证券交易所": conn.execute("select count(*) as count from records where source='巨潮资讯' and (stock_code glob '0*' or stock_code glob '2*' or stock_code glob '3*')").fetchone()["count"],
+        "北京证券交易所": conn.execute("select count(*) as count from records where source='巨潮资讯' and (stock_code glob '4*' or stock_code glob '8*' or stock_code glob '920*')").fetchone()["count"],
+    }
+    latest_dates = {
+        "巨潮资讯": latest_record_date(conn, "source=?", ("巨潮资讯",)),
+        "上海证券交易所": latest_record_date(conn, "source='巨潮资讯' and stock_code glob '6*'"),
+        "深圳证券交易所": latest_record_date(conn, "source='巨潮资讯' and (stock_code glob '0*' or stock_code glob '2*' or stock_code glob '3*')"),
+        "北京证券交易所": latest_record_date(conn, "source='巨潮资讯' and (stock_code glob '4*' or stock_code glob '8*' or stock_code glob '920*')"),
+        "港交所披露易": latest_record_date(conn, "source=?", ("港交所披露易",)),
+    }
+    cninfo_run = runs.get("巨潮资讯")
+    statuses = [source_status("巨潮资讯", "direct", source_counts.get("巨潮资讯", 0), cninfo_run, latest_dates["巨潮资讯"])]
+    for source in ("上海证券交易所", "深圳证券交易所", "北京证券交易所"):
+        statuses.append(source_status(source, "covered", market_counts[source], cninfo_run, latest_dates[source]))
+    statuses.append(source_status("港交所披露易", "direct", source_counts.get("港交所披露易", 0), runs.get("港交所披露易"), latest_dates["港交所披露易"]))
+    website_count = sum(1 for profile in profiles if profile.get("website"))
+    statuses.append({
+        "source": "上市公司官网",
+        "mode": "reference",
+        "connected": website_count > 0,
+        "state": "green" if website_count else "unconnected",
+        "record_count": website_count,
+        "last_checked_at": max((profile.get("fetched_at") or "" for profile in profiles), default="") or None,
+        "last_success_at": max((profile.get("fetched_at") or "" for profile in profiles), default="") or None,
+        "latest_announcement_date": None,
+        "checked_through": None,
+    })
+    statuses.append({
+        "source": "互联网/公众号",
+        "mode": "unconnected",
+        "connected": False,
+        "state": "unconnected",
+        "record_count": source_counts.get("互联网/公众号", 0),
+        "last_checked_at": None,
+        "last_success_at": None,
+        "latest_announcement_date": None,
+        "checked_through": None,
+    })
+    return statuses
+
+
+def latest_record_date(conn, where: str, params: tuple = ()) -> str | None:
+    row = conn.execute(f"select max(announcement_date) as date from records where {where}", params).fetchone()
+    return row["date"] if row else None
+
+
+def source_failure_streak(conn, source: str) -> int:
+    rows = conn.execute(
+        "select status from refresh_runs where source=? order by id desc limit 100",
+        (source,),
+    ).fetchall()
+    streak = 0
+    for row in rows:
+        if row["status"] == "success":
+            break
+        if row["status"] == "failed":
+            streak += 1
+    return streak
+
+
+def source_status(source: str, mode: str, record_count: int, run: dict | None, latest_date: str | None) -> dict:
+    connected = bool(run and run.get("status") == "success")
+    checked_through = run.get("end_date") if connected else None
+    days = (date.today() - date.fromisoformat(checked_through)).days if checked_through else None
+    state = "red" if run and run.get("status") == "failed" else "yellow" if connected and days and days > 1 else "green" if connected else "unconnected"
+    return {
+        "source": source,
+        "mode": mode,
+        "connected": connected,
+        "state": state,
+        "record_count": record_count,
+        "last_checked_at": run.get("finished_at") if run else None,
+        "last_success_at": run.get("finished_at") if connected else None,
+        "latest_announcement_date": latest_date,
+        "checked_through": checked_through,
+    }
 
 
 if __name__ == "__main__":

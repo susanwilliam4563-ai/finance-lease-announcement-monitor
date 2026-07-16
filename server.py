@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import os
 import subprocess
 import sys
@@ -12,6 +13,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 from db import connect, rows_to_records
+from export_records_js import build_source_statuses, source_failure_streak
 
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -53,7 +55,7 @@ class Handler(SimpleHTTPRequestHandler):
         if parsed.path == "/health":
             self.send_json({"status": "ok", "time": datetime.now().isoformat(timespec="seconds")})
             return
-        if parsed.path in {"/", "/index.html", "/styles.css", "/app.js", "/data/records.js"}:
+        if parsed.path in {"/", "/index.html", "/styles.css", "/app.js"} or parsed.path.startswith("/data/"):
             return super().do_GET()
         self.send_error(404)
 
@@ -108,11 +110,22 @@ def status_payload() -> dict:
         row["source"]: row["count"]
         for row in conn.execute("select source, count(*) as count from records group by source").fetchall()
     }
-    data_as_of = latest_success["end_date"] if latest_success else newest
+    profile_rows = []
+    if conn.execute("select 1 from sqlite_master where type='table' and name='subject_profiles'").fetchone():
+        profile_rows = [dict(row) for row in conn.execute("select * from subject_profiles").fetchall()]
+    source_statuses = build_source_statuses(conn, source_counts, profile_rows)
+    direct_sources = [item for item in source_statuses if item["mode"] == "direct"]
+    checked_dates = [item["checked_through"] for item in direct_sources if item.get("checked_through")]
+    data_as_of = min(checked_dates) if checked_dates else (latest_success["end_date"] if latest_success else newest)
     days_since_check = None
     if data_as_of:
         days_since_check = (date.today() - date.fromisoformat(data_as_of)).days
+    failure_streaks = {item["source"]: source_failure_streak(conn, item["source"]) for item in direct_sources}
+    failures = max(failure_streaks.values(), default=0)
+    freshness_state = "red" if any(item["state"] == "red" for item in direct_sources) else "yellow" if days_since_check and days_since_check > 1 else "green"
+    revision_source = f"{total}|{data_as_of}|{latest_success['finished_at'] if latest_success else ''}"
     return {
+        "revision": hashlib.sha256(revision_source.encode("utf-8")).hexdigest()[:16],
         "record_count": total,
         "earliest_announcement_date": earliest,
         "latest_announcement_date": newest,
@@ -121,7 +134,11 @@ def status_payload() -> dict:
         "latest_successful_run": dict(latest_success) if latest_success else None,
         "data_as_of": data_as_of,
         "days_since_check": days_since_check,
+        "freshness_state": freshness_state,
+        "consecutive_failures": failures,
+        "source_failure_streaks": failure_streaks,
         "source_counts": source_counts,
+        "source_statuses": source_statuses,
         "page_poll_interval_seconds": PAGE_POLL_INTERVAL_SECONDS,
         "manual_refresh_enabled": MANUAL_REFRESH_ENABLED,
         "auto_refresh": dict(AUTO_REFRESH_STATE),
@@ -137,12 +154,13 @@ def default_refresh_start() -> str:
 
 
 def run_refresh(start: str, end: str, skip_pdf: bool = False) -> dict:
-    cmd = [sys.executable, str(BASE_DIR / "cninfo_updater.py"), "--start", start, "--end", end]
+    cninfo_cmd = [sys.executable, str(BASE_DIR / "cninfo_updater.py"), "--start", start, "--end", end]
+    hkex_cmd = [sys.executable, str(BASE_DIR / "hkex_updater.py"), "--start", start, "--end", end]
     if skip_pdf:
-        cmd.append("--skip-pdf")
-    completed = subprocess.run(cmd, cwd=str(BASE_DIR), text=True, capture_output=True, timeout=1800)
-    if completed.returncode != 0:
-        return {"status": "failed", "stdout": completed.stdout, "stderr": completed.stderr}
+        cninfo_cmd.append("--skip-pdf")
+        hkex_cmd.append("--skip-pdf")
+    cninfo_completed = subprocess.run(cninfo_cmd, cwd=str(BASE_DIR), text=True, capture_output=True, timeout=1800)
+    hkex_completed = subprocess.run(hkex_cmd, cwd=str(BASE_DIR), text=True, capture_output=True, timeout=1800)
     profile_completed = subprocess.run(
         [sys.executable, str(BASE_DIR / "eastmoney_profile_enricher.py")],
         cwd=str(BASE_DIR),
@@ -157,14 +175,32 @@ def run_refresh(start: str, end: str, skip_pdf: bool = False) -> dict:
         capture_output=True,
         timeout=120,
     )
-    try:
-        result = json.loads(completed.stdout.strip().splitlines()[-1])
-    except Exception:
-        result = {"status": "success", "stdout": completed.stdout}
+    collectors = {
+        "巨潮资讯": process_result(cninfo_completed),
+        "港交所披露易": process_result(hkex_completed),
+    }
+    successful_collectors = sum(1 for item in collectors.values() if item["status"] == "success")
+    result = {
+        "status": "success" if successful_collectors and export_completed.returncode == 0 else "failed",
+        "collectors": collectors,
+        "message": f"{successful_collectors}/2 collectors succeeded",
+    }
     result["profile_status"] = "success" if profile_completed.returncode == 0 else "failed"
     result["profile_stdout"] = profile_completed.stdout.strip().splitlines()[-1:] or []
     result["export_status"] = "success" if export_completed.returncode == 0 else "failed"
     return result
+
+
+def process_result(completed: subprocess.CompletedProcess) -> dict:
+    try:
+        payload = json.loads(completed.stdout.strip().splitlines()[-1])
+    except Exception:
+        payload = {}
+    return {
+        "status": "success" if completed.returncode == 0 else "failed",
+        "result": payload,
+        "stderr": completed.stderr.strip(),
+    }
 
 
 def guarded_refresh(start: str, end: str, skip_pdf: bool, trigger: str) -> dict:
