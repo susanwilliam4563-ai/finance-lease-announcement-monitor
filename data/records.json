@@ -1,7 +1,46 @@
 {
-  "generated_at": "2026-07-29 17:38:36",
-  "count": 4308,
+  "generated_at": "2026-07-30 12:04:41",
+  "count": 4309,
   "records": [
+    {
+      "id": "hkex:2026073001221",
+      "subject_name": "南方錳業",
+      "subject_type": "港股上市公司",
+      "stock_code": "01091",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-07-30",
+      "title": "須予披露交易-有關融資租賃協議",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001221_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0730/2026073001221_c.pdf",
+      "matched_keywords": [
+        "融資租賃",
+        "金融租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "出租人",
+      "amount": "115港元",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "南方錳業公告涉及融资租赁交易，角色为出租人，金额115港元。",
+      "risk_labels": [
+        "提供担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易-有關融資租賃協議",
+        "[正文] e Investment Limited 南方錳業投資有限公司 (於百慕達註冊成立之有限公司) (股份代號 : 1091) 須予披露交易有關融資租賃協議 (1) 第一期融資租賃協議於2025年9月29日，匯元錳業與北部灣金融訂立第一期融資租賃協議，據此，(i) 北部灣金融同意以總代價人民幣 49,000,000元（相當於約港幣 56,350,000元）向匯元錳業購買設備I並将設備I租回",
+        "[正文] 則第 14章項下的申報及公告規定，唯可豁免獲取股東之批准。 釋義於本公告內，除文義另有所指外，下列詞彙具以下涵義。 「北部灣金融」 指北部灣金融租賃有限公司 「董事會」 指本公司董事會 「本公司」 指南方錳業投資有限公司，於百慕達註冊成立之有限公司，其股份於聯交所主板上市（股份代號：1091） 「關連人士」 指具上市規則所賦予之涵義 「董事」 指本公司董事 「設備 I」 指本公告「設備"
+      ],
+      "attention_level": "B",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "cninfo:1225446013",
       "subject_name": "协创数据",
