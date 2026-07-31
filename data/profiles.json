@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-31 10:02:47",
-  "count": 599,
+  "generated_at": "2026-07-31 12:16:53",
+  "count": 600,
   "profiles": [
     {
       "stock_code": "000008",
@@ -7351,6 +7351,27 @@
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
       "fetched_at": "2026-07-31 10:01:15"
+    },
+    {
+      "stock_code": "300997",
+      "secucode": "300997.SZ",
+      "subject_name": "欢乐家",
+      "org_name": "欢乐家食品集团股份有限公司",
+      "csrc_industry": "制造业-酒、饮料和精制茶制造业",
+      "province": "广东",
+      "registered_address": "湛江市开发区人民大道中71号欢乐家大厦28层、29层、31层、32层",
+      "office_address": "湛江市开发区人民大道中71号欢乐家大厦28层、29层、31层、32层",
+      "website": "https://www.gdhlj.com",
+      "trade_market": "深圳证券交易所",
+      "security_type": "深交所创业板A股",
+      "actual_controller": "李兴,朱文湛,李康荣,李子豪",
+      "enterprise_nature": "民营企业",
+      "enterprise_nature_basis": "按实际控制人名称规则判定，需结合年报复核",
+      "market_cap": 7938000000.0,
+      "market_cap_date": "2026-07-31",
+      "market_cap_source": "腾讯证券公开行情",
+      "profile_source": "东方财富公司资料及股东研究",
+      "fetched_at": "2026-07-31 12:16:36"
     },
     {
       "stock_code": "300998",
