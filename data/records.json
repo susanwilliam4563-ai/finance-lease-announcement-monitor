@@ -1,7 +1,44 @@
 {
-  "generated_at": "2026-08-07 11:07:37",
-  "count": 4316,
+  "generated_at": "2026-08-07 13:38:32",
+  "count": 4317,
   "records": [
+    {
+      "id": "hkex:2026080701306",
+      "subject_name": "範式智能",
+      "subject_type": "港股上市公司",
+      "stock_code": "06682",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-08-07",
+      "title": "須予披露交易 售後回租安排",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0807/2026080701306_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0807/2026080701306_c.pdf",
+      "matched_keywords": [
+        "售後回租"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "範式智能公告涉及售后回租，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露",
+        "售后回租"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 售後回租安排"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "cninfo:1225464637",
       "subject_name": "行云科技",
