@@ -1,7 +1,81 @@
 {
-  "generated_at": "2026-09-07 10:17:35",
-  "count": 4340,
+  "generated_at": "2026-09-07 15:54:58",
+  "count": 4342,
   "records": [
+    {
+      "id": "hkex:2026090701280",
+      "subject_name": "喜相逢集團",
+      "subject_type": "港股上市公司",
+      "stock_code": "02473",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-09-07",
+      "title": "主要交易售後回租安排",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0907/2026090701280_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0907/2026090701280_c.pdf",
+      "matched_keywords": [
+        "售後回租"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "喜相逢集團公告涉及售后回租，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露",
+        "售后回租"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 主要交易售後回租安排"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026090701308",
+      "subject_name": "喜相逢集團",
+      "subject_type": "港股上市公司",
+      "stock_code": "02473",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-09-07",
+      "title": "售後回租合同",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0907/2026090701308_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0907/2026090701308_c.pdf",
+      "matched_keywords": [
+        "售後回租"
+      ],
+      "matched_position": "标题",
+      "announcement_type": "售后回租",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "喜相逢集團公告涉及售后回租，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露",
+        "售后回租"
+      ],
+      "review_status": "仅公告元数据",
+      "snippets": [
+        "[标题] 售後回租合同"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "hkex:2026090700585",
       "subject_name": "興業控股",
