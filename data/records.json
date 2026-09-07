@@ -1,7 +1,44 @@
 {
-  "generated_at": "2026-09-07 04:41:07",
-  "count": 4339,
+  "generated_at": "2026-09-07 10:17:35",
+  "count": 4340,
   "records": [
+    {
+      "id": "hkex:2026090700585",
+      "subject_name": "興業控股",
+      "subject_type": "港股上市公司",
+      "stock_code": "00132",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-09-07",
+      "title": "須予披露交易 作為出租人訂立融資租賃",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0907/2026090700585_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0907/2026090700585_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "出租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "興業控股公告涉及融资租赁交易，角色为出租人。",
+      "risk_labels": [
+        "提供担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 作為出租人訂立融資租賃",
+        "[正文] P HOLDINGS LIMITED 興業控股有限公司 （於百慕達註冊成立之有限公司） （股份代號：00132） 須予披露交易作為出租人訂立融資租賃於二零二六年九月七日，本公司之附屬公司綠金租賃與承租人訂立融資租賃，以代價人民幣 15,000,000元 （相當於約港幣17,520,000元） 自承租人取得資產之所有權，該等資產將返租予承租人，供其使用及佔有，期限為三年。 由於融資租賃及"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "hkex:2026090302412",
       "subject_name": "中關村科技租賃",
