@@ -1,7 +1,263 @@
 {
-  "generated_at": "2026-08-07 13:38:32",
-  "count": 4317,
+  "generated_at": "2026-09-07 02:24:25",
+  "count": 4324,
   "records": [
+    {
+      "id": "hkex:2026090302412",
+      "subject_name": "中關村科技租賃",
+      "subject_type": "港股上市公司",
+      "stock_code": "01601",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-09-03",
+      "title": "須予披露交易 融資租賃交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0903/2026090302412_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0903/2026090302412_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "中關村科技租賃公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 融資租賃交易"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026083102188",
+      "subject_name": "中關村科技租賃",
+      "subject_type": "港股上市公司",
+      "stock_code": "01601",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-08-31",
+      "title": "須予披露交易 融資租賃交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083102188_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083102188_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "中關村科技租賃公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 融資租賃交易"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026083101508",
+      "subject_name": "亨泰",
+      "subject_type": "港股上市公司",
+      "stock_code": "00197",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-08-31",
+      "title": "(1) 有關建議出售一間附屬公司的非常重大的出售事項及關連交易；(2) 有關建議售後租回該物業的主要及關連交易；及(3) 股東特別大會通告",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083101508_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083101508_c.pdf",
+      "matched_keywords": [
+        "售後租回"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "是",
+      "guarantee_or_collateral": "未披露",
+      "summary": "亨泰公告涉及售后回租，角色为交易对手。",
+      "risk_labels": [
+        "关联交易",
+        "利率未披露",
+        "售后回租"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] (1) 有關建議出售一間附屬公司的非常重大的出售事項及關連交易；(2) 有關建議售後租回該物業的主要及關連交易；及(3) 股東特別大會通告"
+      ],
+      "attention_level": "B",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026083102084",
+      "subject_name": "陽光紙業",
+      "subject_type": "港股上市公司",
+      "stock_code": "02002",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-08-31",
+      "title": "須予披露交易 融資租賃安排",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083102084_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0831/2026083102084_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "平安國際融資租賃",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "陽光紙業公告涉及融资租赁交易，角色为交易对手，交易对手为平安國際融資租賃。",
+      "risk_labels": [
+        "提供担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 融資租賃安排",
+        "[正文]  CHINA SUNSHINE PAPER HOLDINGS COMPANY LIMITED ΅˾໮j 2002  ʮ̡ * 須予披露交易融資租賃安排融資租賃安排董事會欣然宣佈，於二零二六年八月三十一日（交易時段後），新邁紙業（本公司全資附屬公司，作為賣方及承租方）與平安國際融資租賃（作為買方及出租方）訂立融資租賃合同，據此，平安國際融資租賃已同意（其中包括）(i) 向新邁紙業購買租"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026082701380",
+      "subject_name": "中國飛機租賃",
+      "subject_type": "港股上市公司",
+      "stock_code": "01848",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-08-27",
+      "title": "本公司之全資附屬公司中飛租融資租賃有限公司 2026年中期未經審核財務資料概要",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082701380_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082701380_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "中國飛機租賃公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 本公司之全資附屬公司中飛租融資租賃有限公司 2026年中期未經審核財務資料概要"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026082702212",
+      "subject_name": "博安生物",
+      "subject_type": "港股上市公司",
+      "stock_code": "06955",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-08-27",
+      "title": "須予披露交易 融資租賃協議",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082702212_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082702212_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "博安生物公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 融資租賃協議"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026082702210",
+      "subject_name": "微創機器人－Ｂ",
+      "subject_type": "港股上市公司",
+      "stock_code": "02252",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-08-27",
+      "title": "關於終止融資租賃協議之關連交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082702210_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0827/2026082702210_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "是",
+      "guarantee_or_collateral": "未披露",
+      "summary": "微創機器人－Ｂ公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "关联交易",
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 關於終止融資租賃協議之關連交易"
+      ],
+      "attention_level": "B",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "hkex:2026080701306",
       "subject_name": "範式智能",
