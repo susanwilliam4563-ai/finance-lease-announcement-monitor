@@ -1,7 +1,79 @@
 {
-  "generated_at": "2026-09-21 17:03:26",
-  "count": 4370,
+  "generated_at": "2026-09-22 14:56:07",
+  "count": 4372,
   "records": [
+    {
+      "id": "hkex:2026092201398",
+      "subject_name": "中關村科技租賃",
+      "subject_type": "港股上市公司",
+      "stock_code": "01601",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-09-22",
+      "title": "須予披露交易 採購協議及融資租賃交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0922/2026092201398_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0922/2026092201398_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "中關村科技租賃公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 採購協議及融資租賃交易"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026092200934",
+      "subject_name": "百應控股",
+      "subject_type": "港股上市公司",
+      "stock_code": "08525",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-09-22",
+      "title": "有關融資租賃協議的須予披露交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/gem/2026/0922/2026092200934_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/gem/2026/0922/2026092200934_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "百應控股公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 有關融資租賃協議的須予披露交易"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "cninfo:1225573798",
       "subject_name": "协创数据",
