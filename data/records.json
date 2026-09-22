@@ -1,7 +1,48 @@
 {
-  "generated_at": "2026-09-22 14:56:07",
-  "count": 4372,
+  "generated_at": "2026-09-22 18:54:41",
+  "count": 4374,
   "records": [
+    {
+      "id": "cninfo:1225576437",
+      "subject_name": "东航物流",
+      "subject_type": "A股上市公司",
+      "stock_code": "601156",
+      "bond_code": "",
+      "region": "上海",
+      "industry": "交通运输、仓储和邮政业-航空运输业",
+      "announcement_date": "2026-09-22",
+      "title": "东航物流关于融资租赁飞机提前回购暨关联交易的公告",
+      "source": "巨潮资讯",
+      "source_url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601156&announcementId=1225576437",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-09-23/1225576437.PDF",
+      "matched_keywords": [
+        "租赁融资",
+        "融资租赁",
+        "融资租赁业务"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "关联交易",
+      "lease_role": "承租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "是",
+      "guarantee_or_collateral": "未披露",
+      "summary": "东航物流公告涉及关联交易，构成关联交易。",
+      "risk_labels": [
+        "关联交易",
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 东航物流关于融资租赁飞机提前回购暨关联交易的公告",
+        "[正文] 1 证券代码：601156 证券简称：东航物流公告编号：临 2026-030 东方航空物流股份有限公司关于融资租赁飞机提前回购暨关联交易的公告本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示：  为降低融资成本，优化财务结构，东方航空物流",
+        "[正文] 库区集中辅助区三层 318 室股本结构：东航国际融资租赁有限公司持股100% 经营范围：许可项目：融资租赁公司在境内保税地区设立项目公司开展融资租赁业务。（依法须经批准的项目，经相关部门批准后方可开展经营活动，具体经营项目以相关部门批准文件或许可证件为准） 经公开查询，东航燕清不是失信被执行人。 （二）东航燕水飞机租赁（上海）有限公司统一社会信用代码：91310115M"
+      ],
+      "attention_level": "B",
+      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
+    },
     {
       "id": "hkex:2026092201398",
       "subject_name": "中關村科技租賃",
@@ -37,6 +78,46 @@
       ],
       "attention_level": "C",
       "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "cninfo:1225577811",
+      "subject_name": "先河环保",
+      "subject_type": "A股上市公司",
+      "stock_code": "300137",
+      "bond_code": "",
+      "region": "河北",
+      "industry": "制造业-仪器仪表制造业",
+      "announcement_date": "2026-09-22",
+      "title": "关于为全资子公司申请融资租赁提供担保的公告",
+      "source": "巨潮资讯",
+      "source_url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300137&announcementId=1225577811",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-09-23/1225577811.PDF",
+      "matched_keywords": [
+        "租赁融资",
+        "融资租赁"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "担保公告",
+      "lease_role": "担保方",
+      "amount": "16,758万元",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "先河环保公告涉及担保公告，金额16,758万元，涉及提供担保。",
+      "risk_labels": [
+        "利率未披露",
+        "子公司承租",
+        "对外担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 关于为全资子公司申请融资租赁提供担保的公告",
+        "[正文] 证券代码：300137 证券简称：先河环保公告编号：2026-049 河北先河环保科技股份有限公司关于为全资子公司申请融资租赁提供担保的公告本公司及董事会全体成员保证信息披露内容的真实、准确、完整，没有虚假记载、误导性陈述或重大遗漏。 2026 年 9 月 21 日，河北先河环保科技股份有限公司（以下简称“公司”） 第五届董事会第十九次会议审议"
+      ],
+      "attention_level": "B",
+      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
     },
     {
       "id": "hkex:2026092200934",
