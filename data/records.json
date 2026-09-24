@@ -1,7 +1,42 @@
 {
-  "generated_at": "2026-09-23 20:21:33",
-  "count": 4375,
+  "generated_at": "2026-09-24 10:00:21",
+  "count": 4376,
   "records": [
+    {
+      "id": "hkex:2026092400326",
+      "subject_name": "友聯國際教育租賃",
+      "subject_type": "港股上市公司",
+      "stock_code": "01563",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-09-24",
+      "title": "須予披露交易 融資租賃協議",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0924/2026092400326_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0924/2026092400326_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "出租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "友聯國際教育租賃公告涉及融资租赁交易，角色为出租人。",
+      "risk_labels": [],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 融資租賃協議",
+        "[正文] RNATIONAL EDUCATION LEASING HOLDINGS LIMITED ʮ̡ ʮ̡ ΅˾໮j 1563  須予披露交易融資租賃協議融資租賃協議董事會欣然宣佈，於二零二六年九月二十四日（交易時段後），出租人（作為出租人）為本公司之全資附屬公司，擬與承租人（作為承租人）訂立融資租賃協議，據此(i) 出租人同意以代價人民幣23,700,000 元向承租人購買租賃資產；及"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "cninfo:1225580497",
       "subject_name": "侨银股份",
