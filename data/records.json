@@ -1,7 +1,118 @@
 {
-  "generated_at": "2026-09-28 22:00:19",
-  "count": 4382,
+  "generated_at": "2026-09-29 15:51:19",
+  "count": 4385,
   "records": [
+    {
+      "id": "hkex:2026092901522",
+      "subject_name": "中國誠通發展集團",
+      "subject_type": "港股上市公司",
+      "stock_code": "00217",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-09-29",
+      "title": "主要交易 – 售後回租安排",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092901522_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092901522_c.pdf",
+      "matched_keywords": [
+        "售後回租"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "中國誠通發展集團公告涉及售后回租，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露",
+        "售后回租"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 主要交易 – 售後回租安排"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026092900824",
+      "subject_name": "興業控股",
+      "subject_type": "港股上市公司",
+      "stock_code": "00132",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-09-29",
+      "title": "須予披露交易 作為出租人訂立融資租賃",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092900824_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092900824_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "出租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "興業控股公告涉及融资租赁交易，角色为出租人。",
+      "risk_labels": [
+        "提供担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 作為出租人訂立融資租賃",
+        "[正文] P HOLDINGS LIMITED 興業控股有限公司 （於百慕達註冊成立之有限公司） （股份代號：00132） 須予披露交易作為出租人訂立融資租賃於二零二六年九月二十九日 ， 本公司之附屬公司綠金租賃與承租人訂立融資租賃 ， 以代價人民幣 23,000,000元 （相當於約港幣26,887,000元） 自承租人取得資產之所有權，該等資產將返租予承租人，供其使用及佔有，期限為五年。 由"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026092901008",
+      "subject_name": "興業控股",
+      "subject_type": "港股上市公司",
+      "stock_code": "00132",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-09-29",
+      "title": "須予披露交易 作為出租人訂立融資租賃",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092901008_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0929/2026092901008_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "出租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "興業控股公告涉及融资租赁交易，角色为出租人。",
+      "risk_labels": [
+        "提供担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 作為出租人訂立融資租賃",
+        "[正文] P HOLDINGS LIMITED 興業控股有限公司 （於百慕達註冊成立之有限公司） （股份代號：00132） 須予披露交易作為出租人訂立融資租賃於二零二六年九月二十九日 ， 本公司之附屬公司綠金租賃與承租人訂立融資租賃 ， 以總代價人民幣15,000,000元 （相當於約港幣17,535,000元） 自承租人取得資產之所有權，該等資產將返租予承租人，供其使用及佔有，期限為五年。 由"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "hkex:2026092801350",
       "subject_name": "中國誠通發展集團",
