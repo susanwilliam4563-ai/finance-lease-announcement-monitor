@@ -1,7 +1,45 @@
 {
-  "generated_at": "2026-10-08 07:26:45",
-  "count": 4387,
+  "generated_at": "2026-10-08 21:19:39",
+  "count": 4388,
   "records": [
+    {
+      "id": "cninfo:1225597229",
+      "subject_name": "大连重工",
+      "subject_type": "A股上市公司",
+      "stock_code": "002204",
+      "bond_code": "",
+      "region": "辽宁",
+      "industry": "制造业-通用设备制造业",
+      "announcement_date": "2026-10-08",
+      "title": "关于与关联方大连装备融资租赁有限公司诉讼进展的公告",
+      "source": "巨潮资讯",
+      "source_url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002204&announcementId=1225597229",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-10-09/1225597229.PDF",
+      "matched_keywords": [
+        "租赁融资",
+        "融资租赁"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "承租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "关联方大连装备融资租赁有限公司",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "大连重工公告涉及融资租赁交易，交易对手为关联方大连装备融资租赁有限公司，涉及提供担保。",
+      "risk_labels": [
+        "对外担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 关于与关联方大连装备融资租赁有限公司诉讼进展的公告",
+        "[正文] 第 1 页共 4 页证券代码：002204 证券简称：大连重工公告编号：2026-043 大连华锐重工集团股份有限公司关于与关联方大连装备融资租赁有限公司诉讼进展的公告本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假记载、 误导性陈述或重大遗漏。 特别提示： 1.案件所处的诉讼阶段：辽宁省大连市中级人民法院已出具二审判决， 该判决为终审判决。 2"
+      ],
+      "attention_level": "C",
+      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
+    },
     {
       "id": "hkex:2026100702012",
       "subject_name": "天長集團",
