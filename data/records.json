@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-20 15:07:51",
-  "count": 4405,
+  "generated_at": "2026-10-20 19:15:49",
+  "count": 4406,
   "records": [
     {
       "id": "hkex:2026102001302",
@@ -38,6 +38,43 @@
       ],
       "attention_level": "C",
       "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "cninfo:1225612583",
+      "subject_name": "浙文互联",
+      "subject_type": "A股上市公司",
+      "stock_code": "600986",
+      "bond_code": "",
+      "region": "浙江",
+      "industry": "信息传输、软件和信息技术服务业-互联网和相关服务",
+      "announcement_date": "2026-10-20",
+      "title": "浙江文投融资租赁有限公司拟增资扩股涉及的股东全部权益价值评估项目资产评估报告",
+      "source": "巨潮资讯",
+      "source_url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600986&announcementId=1225612583",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-10-21/1225612583.PDF",
+      "matched_keywords": [
+        "租赁融资",
+        "融资租赁"
+      ],
+      "matched_position": "标题",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "承租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "浙文互联公告涉及融资租赁交易。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "仅公告元数据",
+      "snippets": [
+        "[标题] 浙江文投融资租赁有限公司拟增资扩股涉及的股东全部权益价值评估项目资产评估报告"
+      ],
+      "attention_level": "C",
+      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
     },
     {
       "id": "hkex:2026102000469",

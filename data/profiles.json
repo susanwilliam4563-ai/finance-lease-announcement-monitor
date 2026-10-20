@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-20 15:07:51",
-  "count": 605,
+  "generated_at": "2026-10-20 19:15:49",
+  "count": 606,
   "profiles": [
     {
       "stock_code": "000008",
@@ -9955,6 +9955,27 @@
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
       "fetched_at": "2026-10-20 15:06:53"
+    },
+    {
+      "stock_code": "600986",
+      "secucode": "600986.SH",
+      "subject_name": "浙文互联",
+      "org_name": "浙文互联集团股份有限公司",
+      "csrc_industry": "信息传输、软件和信息技术服务业-互联网和相关服务",
+      "province": "浙江",
+      "registered_address": "浙江省杭州市临安区锦南街道九州街88号",
+      "office_address": "北京市朝阳区高碑店乡高井文化园路8号东亿国际传媒产业园区二期元君书苑F1号楼,浙江省杭州市拱墅区天水街道浙江文化大厦17楼",
+      "website": "https://www.zwhlgroup.com",
+      "trade_market": "上海证券交易所",
+      "security_type": "上交所主板A股",
+      "actual_controller": "浙江省财政厅",
+      "enterprise_nature": "地方国企",
+      "enterprise_nature_basis": "实际控制人为地方政府或地方国资机构",
+      "market_cap": 10352000000.0,
+      "market_cap_date": "2026-10-20",
+      "market_cap_source": "腾讯证券公开行情",
+      "profile_source": "东方财富公司资料及股东研究",
+      "fetched_at": "2026-10-20 19:15:22"
     },
     {
       "stock_code": "601005",
