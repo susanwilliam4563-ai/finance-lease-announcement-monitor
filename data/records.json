@@ -1,7 +1,121 @@
 {
-  "generated_at": "2026-10-23 13:25:42",
-  "count": 4415,
+  "generated_at": "2026-10-26 12:59:42",
+  "count": 4418,
   "records": [
+    {
+      "id": "hkex:2026102600976",
+      "subject_name": "中國誠通發展集團",
+      "subject_type": "港股上市公司",
+      "stock_code": "00217",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-10-26",
+      "title": "主要交易 – 售後回租安排",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1026/2026102600976_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1026/2026102600976_c.pdf",
+      "matched_keywords": [
+        "售後回租"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "中國誠通發展集團公告涉及售后回租，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露",
+        "售后回租"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 主要交易 – 售後回租安排"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026102601000",
+      "subject_name": "洲際船務",
+      "subject_type": "港股上市公司",
+      "stock_code": "02409",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-10-26",
+      "title": "(I)主要交易 行使提前購買選擇權；及 (II)主要交易 有關三艘船舶的融資租賃安排",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1026/2026102601000_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1026/2026102601000_c.pdf",
+      "matched_keywords": [
+        "售後租回",
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "洲際船務公告涉及售后回租，角色为交易对手。",
+      "risk_labels": [
+        "售后回租",
+        "提供担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] (I)主要交易 行使提前購買選擇權；及 (II)主要交易 有關三艘船舶的融資租賃安排",
+        "[正文] 的第三方。 七、行使提前購買選擇權及三項融資租賃安排的財務影響本集團已行使提前購買選擇權，與現有出租人訂立現有融資租賃安排，並將船舶置於一項售後租回安排之下，且本集團享有提前購買選擇權項下的權利。根據售後租回安排，三艘船舶並未被終止確認，而自現有出租人收取的代價則於本集團合併資產負債表內確認為借款。 誠如該公告所披露，租船人透過行使提前購買選擇權購買的船舶將隨後根據各協議備忘錄交付予擁",
+        "[正文] imited ݲყ୵ਕණྠછٰϞࠢʮ̡ ٰ΅˾໮j 2409  (I) 主要交易行使提前購買選擇權；及 (II) 主要交易有關三艘船舶的融資租賃安排除文義另有所指外，本通函所使用詞彙與本通函「釋義」一節所界定者具有相同涵義。 董事會函件載於本通函第6至17頁。 本公司已就行使提前購買選擇權及三項融資租賃安排取得密切聯繫集團的不可撤銷及無條件書面批准。因此，根據上市規則第14.44 "
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026102600655",
+      "subject_name": "興業控股",
+      "subject_type": "港股上市公司",
+      "stock_code": "00132",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-10-26",
+      "title": "主要交易 作為出租人訂立融資租賃",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1026/2026102600655_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1026/2026102600655_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "出租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "興業控股公告涉及融资租赁交易，角色为出租人。",
+      "risk_labels": [
+        "提供担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 主要交易 作為出租人訂立融資租賃",
+        "[正文] IP HOLDINGS LIMITED 興業控股有限公司 （股份代號：001 32） （於百慕達註冊成立之有限公司） 主要交易作為出租人訂立融資租賃於二零二六年十月二十六日 ， 本公司之附屬公司綠金租賃與承租人訂立融資租賃 ， 以總代價人民幣 100,000,000元 （相當於約港幣117,500,000元） 自承租人取得資產之所有權 ， 該等資產將返租予承租人 ， 供其使用及佔有 ，"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "hkex:2026102300565",
       "subject_name": "中國誠通發展集團",
