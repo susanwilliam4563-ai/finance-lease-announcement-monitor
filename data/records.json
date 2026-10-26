@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-26 12:59:42",
-  "count": 4418,
+  "generated_at": "2026-10-26 19:18:15",
+  "count": 4421,
   "records": [
     {
       "id": "hkex:2026102600976",
@@ -38,6 +38,80 @@
       ],
       "attention_level": "C",
       "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "cninfo:1225625865",
+      "subject_name": "江苏金租",
+      "subject_type": "A股上市公司",
+      "stock_code": "600901",
+      "bond_code": "",
+      "region": "江苏",
+      "industry": "金融业-货币金融服务",
+      "announcement_date": "2026-10-26",
+      "title": "江苏金租：华泰联合证券有限责任公司关于江苏金融租赁股份有限公司2019年限制性股票激励计划部分限制性股票解除限售之核查意见",
+      "source": "巨潮资讯",
+      "source_url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600901&announcementId=1225625865",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225625865.PDF",
+      "matched_keywords": [
+        "金融租赁"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "承租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "江苏金租公告涉及融资租赁交易，涉及提供担保。",
+      "risk_labels": [
+        "利率未披露",
+        "对外担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 江苏金租：华泰联合证券有限责任公司关于江苏金融租赁股份有限公司2019年限制性股票激励计划部分限制性股票解除限售之核查意见",
+        "[正文] 1 公司简称：江苏金租证券代码：600901 华泰联合证券有限责任公司关于江苏金融租赁股份有限公司 2019年限制性股票股权激励计划部分限制性股票解除限售之核查意见二零二六年十月 2 目录目录 ........................................................"
+      ],
+      "attention_level": "B",
+      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
+    },
+    {
+      "id": "cninfo:1225625884",
+      "subject_name": "江苏金租",
+      "subject_type": "A股上市公司",
+      "stock_code": "600901",
+      "bond_code": "",
+      "region": "江苏",
+      "industry": "金融业-货币金融服务",
+      "announcement_date": "2026-10-26",
+      "title": "江苏金租：江苏世纪同仁律师事务所关于江苏金融租赁股份有限公司2019年限制性股票股权激励计划高级管理人员限售股份解除限售相关事项的法律意见书",
+      "source": "巨潮资讯",
+      "source_url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600901&announcementId=1225625884",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225625884.PDF",
+      "matched_keywords": [
+        "金融租赁"
+      ],
+      "matched_position": "标题",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "承租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "江苏金租公告涉及融资租赁交易。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "仅公告元数据",
+      "snippets": [
+        "[标题] 江苏金租：江苏世纪同仁律师事务所关于江苏金融租赁股份有限公司2019年限制性股票股权激励计划高级管理人员限售股份解除限售相关事项的法律意见书"
+      ],
+      "attention_level": "C",
+      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
     },
     {
       "id": "hkex:2026102601000",
@@ -115,6 +189,54 @@
       ],
       "attention_level": "C",
       "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "cninfo:1225622160",
+      "subject_name": "金煤科技",
+      "subject_type": "A股上市公司",
+      "stock_code": "600844",
+      "bond_code": "",
+      "region": "内蒙古",
+      "industry": "制造业-化学原料和化学制品制造业",
+      "announcement_date": "2026-10-26",
+      "title": "关于控股子公司办理融资租赁业务并为其提供担保的公告",
+      "source": "巨潮资讯",
+      "source_url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600844&announcementId=1225622160",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-10-27/1225622160.PDF",
+      "matched_keywords": [
+        "售后回租",
+        "租赁融资",
+        "融资租赁",
+        "融资租赁业务"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "担保方",
+      "amount": "1.2亿元",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "是",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "金煤科技公告涉及售后回租，金额1.2亿元，构成关联交易，涉及提供担保。",
+      "risk_labels": [
+        "关联交易",
+        "利率未披露",
+        "售后回租",
+        "大额融资",
+        "子公司承租",
+        "对外担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[正文] 担保的基本情况 2 为拓宽融资渠道，满足生产经营资金需求，公司控股子公司通辽金煤化工有限公司（简称：通辽金煤）拟用部分生产设备作为标的物，以售后回租方式向君创国际融资租赁有限公司（简称：君创国际）办理融资租赁业务，融资金额合计不超过 1.2 亿元，期限为不超过 36 个月，将为该笔融资租赁业务所涉借款与公司实际控制人旗下企业提供联合担保。本次担保无反担保，通辽金煤其",
+        "[标题] 关于控股子公司办理融资租赁业务并为其提供担保的公告",
+        "[正文] 代码：600844，900921 证券简称：金煤科技，金煤 B股公告编号：2026-051 内蒙古金煤化工科技股份有限公司关于控股子公司办理融资租赁业务并为其提供担保的公告本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示：  担保对象及基本情况被担保人名称本次担保金额实际",
+        "[标题] 关于控股子公司办理融资租赁业务并为其提供担保的公告",
+        "[正文] 代码：600844，900921 证券简称：金煤科技，金煤 B股公告编号：2026-051 内蒙古金煤化工科技股份有限公司关于控股子公司办理融资租赁业务并为其提供担保的公告本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示：  担保对象及基本情况被担保人名称本次担保金额实际为其"
+      ],
+      "attention_level": "A",
+      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
     },
     {
       "id": "hkex:2026102300565",

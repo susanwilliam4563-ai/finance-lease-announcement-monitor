@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-26 12:59:42",
-  "count": 607,
+  "generated_at": "2026-10-26 19:18:15",
+  "count": 608,
   "profiles": [
     {
       "stock_code": "000008",
@@ -5439,7 +5439,7 @@
       "market_cap_date": "2026-10-26",
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
-      "fetched_at": "2026-10-25 16:16:03"
+      "fetched_at": "2026-10-26 19:18:00"
     },
     {
       "stock_code": "300141",
@@ -7686,7 +7686,7 @@
       "market_cap_date": "2026-10-26",
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
-      "fetched_at": "2026-10-25 16:16:04"
+      "fetched_at": "2026-10-26 19:18:00"
     },
     {
       "stock_code": "301396",
@@ -9705,6 +9705,27 @@
       "fetched_at": "2026-10-26 06:13:53"
     },
     {
+      "stock_code": "600844",
+      "secucode": "600844.SH",
+      "subject_name": "金煤科技",
+      "org_name": "内蒙古金煤化工科技股份有限公司",
+      "csrc_industry": "制造业-化学原料和化学制品制造业",
+      "province": "内蒙古",
+      "registered_address": "内蒙古自治区呼和浩特市敕勒川大街东方君座A座15楼",
+      "office_address": "内蒙古自治区呼和浩特市赛罕区香榭花堤东侧内蒙古北斗应用产业园4楼",
+      "website": "https://www.600844.com",
+      "trade_market": "上海证券交易所",
+      "security_type": "上交所主板A股",
+      "actual_controller": "未披露",
+      "enterprise_nature": "公众企业",
+      "enterprise_nature_basis": "公开资料未披露实际控制人",
+      "market_cap": 2917000000.0,
+      "market_cap_date": "2026-10-26",
+      "market_cap_source": "腾讯证券公开行情",
+      "profile_source": "东方财富公司资料及股东研究",
+      "fetched_at": "2026-10-26 19:18:00"
+    },
+    {
       "stock_code": "600848",
       "secucode": "600848.SH",
       "subject_name": "上海临港",
@@ -11634,7 +11655,7 @@
       "market_cap_date": "2026-10-26",
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
-      "fetched_at": "2026-10-25 16:16:02"
+      "fetched_at": "2026-10-26 19:18:00"
     },
     {
       "stock_code": "603698",
