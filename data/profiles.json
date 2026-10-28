@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-28 16:03:46",
-  "count": 608,
+  "generated_at": "2026-10-28 21:03:19",
+  "count": 609,
   "profiles": [
     {
       "stock_code": "000008",
@@ -7645,6 +7645,27 @@
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
       "fetched_at": "2026-10-28 16:02:10"
+    },
+    {
+      "stock_code": "301309",
+      "secucode": "301309.SZ",
+      "subject_name": "万得凯",
+      "org_name": "浙江万得凯流体设备科技股份有限公司",
+      "csrc_industry": "制造业-通用设备制造业",
+      "province": "浙江",
+      "registered_address": "浙江省玉环市龙溪镇东港村渔业",
+      "office_address": "浙江省玉环市龙溪镇东港村渔业",
+      "website": "https://www.zjwdk.com",
+      "trade_market": "深圳证券交易所",
+      "security_type": "深交所创业板A股",
+      "actual_controller": "陈方仁,钟兴富,汪素云,汪桂苹,陈金勇,陈礼宏",
+      "enterprise_nature": "民营企业",
+      "enterprise_nature_basis": "按实际控制人名称规则判定，需结合年报复核",
+      "market_cap": 2982000000.0,
+      "market_cap_date": "2026-10-28",
+      "market_cap_source": "腾讯证券公开行情",
+      "profile_source": "东方财富公司资料及股东研究",
+      "fetched_at": "2026-10-28 21:03:01"
     },
     {
       "stock_code": "301325",
