@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30 12:53:13",
+  "generated_at": "2026-10-31 15:44:44",
   "count": 4433,
   "records": [
     {
@@ -1209,12 +1209,12 @@
       "risk_labels": [
         "利率未披露"
       ],
-      "review_status": "仅公告元数据",
+      "review_status": "待补充正文",
       "snippets": [
         "[标题] 浙江文投融资租赁有限公司拟增资扩股涉及的股东全部权益价值评估项目资产评估报告"
       ],
       "attention_level": "C",
-      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
+      "notes": "IncompleteRead(573163 bytes read, 7820666 more expected)；地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
     },
     {
       "id": "hkex:2026102000469",
