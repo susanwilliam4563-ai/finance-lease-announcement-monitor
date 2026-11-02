@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02 11:02:08",
+  "generated_at": "2026-11-02 20:46:13",
   "count": 610,
   "profiles": [
     {
@@ -5204,7 +5204,7 @@
       "actual_controller": "范中华",
       "enterprise_nature": "民营企业",
       "enterprise_nature_basis": "按实际控制人名称规则判定，需结合年报复核",
-      "market_cap": 4368000000.0,
+      "market_cap": 4329000000.0,
       "market_cap_date": "2026-11-02",
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
@@ -5439,7 +5439,7 @@
       "market_cap_date": "2026-11-02",
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
-      "fetched_at": "2026-11-01 13:20:29"
+      "fetched_at": "2026-11-02 20:45:59"
     },
     {
       "stock_code": "300141",
@@ -7707,7 +7707,7 @@
       "market_cap_date": "2026-11-02",
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
-      "fetched_at": "2026-11-01 13:20:31"
+      "fetched_at": "2026-11-02 20:45:59"
     },
     {
       "stock_code": "301396",
@@ -9744,7 +9744,7 @@
       "market_cap_date": "2026-11-02",
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
-      "fetched_at": "2026-11-01 13:20:31"
+      "fetched_at": "2026-11-02 20:45:59"
     },
     {
       "stock_code": "600848",
@@ -11697,7 +11697,7 @@
       "market_cap_date": "2026-11-02",
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
-      "fetched_at": "2026-11-01 13:20:31"
+      "fetched_at": "2026-11-02 20:45:58"
     },
     {
       "stock_code": "603698",
