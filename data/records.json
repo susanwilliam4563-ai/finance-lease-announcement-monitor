@@ -1,7 +1,81 @@
 {
-  "generated_at": "2026-11-02 20:46:13",
-  "count": 4434,
+  "generated_at": "2026-11-04 14:41:09",
+  "count": 4436,
   "records": [
+    {
+      "id": "hkex:2026110402060",
+      "subject_name": "中國誠通發展集團",
+      "subject_type": "港股上市公司",
+      "stock_code": "00217",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-04",
+      "title": "延遲寄發有關主要交易 - 售後回租安排的通函",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1104/2026110402060_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1104/2026110402060_c.pdf",
+      "matched_keywords": [
+        "售後回租"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "陽泉華新液化天然氣有限公司",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "中國誠通發展集團公告涉及售后回租，角色为交易对手，交易对手为陽泉華新液化天然氣有限公司。",
+      "risk_labels": [
+        "利率未披露",
+        "售后回租"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 延遲寄發有關主要交易 - 售後回租安排的通函",
+        "[正文] ENT GROUP LIMITED 中國誠通發展集團有限公司 （於香港註冊成立之有限公司） （股份代號：217） 延遲寄發有關主要交易 – 售後回租安排的通函茲提述本公司日期為二零二六年十月二十六日內容有關與陽泉華新液化天然氣有限公司訂立的售後回租安排的公告 （「該公告」 ） 。除另有界定者外 ， 本公告所用詞彙與該公告各所界定者具有相同涵義。 誠如該公告所披露 ， 根據上市規則第 1"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026110402302",
+      "subject_name": "中關村科技租賃",
+      "subject_type": "港股上市公司",
+      "stock_code": "01601",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-04",
+      "title": "須予披露交易 融資租賃交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1104/2026110402302_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1104/2026110402302_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "中關村科技租賃公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 融資租賃交易"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "cninfo:1225651913",
       "subject_name": "民德电子",
