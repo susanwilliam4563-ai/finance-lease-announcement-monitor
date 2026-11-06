@@ -1,7 +1,116 @@
 {
-  "generated_at": "2026-11-05 10:56:43",
-  "count": 4437,
+  "generated_at": "2026-11-06 15:06:12",
+  "count": 4440,
   "records": [
+    {
+      "id": "hkex:2026110601547",
+      "subject_name": "中國誠通發展集團",
+      "subject_type": "港股上市公司",
+      "stock_code": "00217",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-06",
+      "title": "主要交易 - 融資租賃安排",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1106/2026110601547_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1106/2026110601547_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "中國誠通發展集團公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 主要交易 - 融資租賃安排"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026110601661",
+      "subject_name": "中關村科技租賃",
+      "subject_type": "港股上市公司",
+      "stock_code": "01601",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-06",
+      "title": "須予披露交易 融資租賃交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1106/2026110601661_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1106/2026110601661_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "中關村科技租賃公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 融資租賃交易"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026110601685",
+      "subject_name": "國泰海通",
+      "subject_type": "港股上市公司",
+      "stock_code": "02611",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-06",
+      "title": "須予披露及關連交易 - 不可撤銷承諾及建議出售海通恆信國際融資租賃股份有限公司股份",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1106/2026110601685_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1106/2026110601685_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "是",
+      "guarantee_or_collateral": "未披露",
+      "summary": "國泰海通公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "关联交易",
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露及關連交易 - 不可撤銷承諾及建議出售海通恆信國際融資租賃股份有限公司股份"
+      ],
+      "attention_level": "B",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "cninfo:1225658691",
       "subject_name": "协创数据",
