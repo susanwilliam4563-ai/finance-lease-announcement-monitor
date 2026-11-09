@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09 07:57:47",
+  "generated_at": "2026-11-09 18:47:02",
   "count": 611,
   "profiles": [
     {
@@ -5439,7 +5439,7 @@
       "market_cap_date": "2026-11-09",
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
-      "fetched_at": "2026-11-08 10:18:42"
+      "fetched_at": "2026-11-09 18:46:46"
     },
     {
       "stock_code": "300141",
@@ -7707,7 +7707,7 @@
       "market_cap_date": "2026-11-09",
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
-      "fetched_at": "2026-11-08 10:18:42"
+      "fetched_at": "2026-11-09 18:46:47"
     },
     {
       "stock_code": "301396",
@@ -9744,7 +9744,7 @@
       "market_cap_date": "2026-11-09",
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
-      "fetched_at": "2026-11-08 10:18:42"
+      "fetched_at": "2026-11-09 18:46:46"
     },
     {
       "stock_code": "600848",
@@ -10979,7 +10979,7 @@
       "actual_controller": "曾而斌",
       "enterprise_nature": "民营企业",
       "enterprise_nature_basis": "公司简介明确表述为民营企业",
-      "market_cap": 14127000000.000002,
+      "market_cap": 14131000000.0,
       "market_cap_date": "2026-11-09",
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
@@ -11714,11 +11714,11 @@
       "actual_controller": "丁闵",
       "enterprise_nature": "民营企业",
       "enterprise_nature_basis": "按实际控制人名称规则判定，需结合年报复核",
-      "market_cap": 5919000000.0,
+      "market_cap": 5931000000.0,
       "market_cap_date": "2026-11-09",
       "market_cap_source": "腾讯证券公开行情",
       "profile_source": "东方财富公司资料及股东研究",
-      "fetched_at": "2026-11-08 10:18:43"
+      "fetched_at": "2026-11-09 18:46:46"
     },
     {
       "stock_code": "603698",
