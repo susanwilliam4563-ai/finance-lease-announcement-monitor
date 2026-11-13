@@ -1,7 +1,193 @@
 {
-  "generated_at": "2026-11-12 18:55:15",
-  "count": 4456,
+  "generated_at": "2026-11-13 16:24:07",
+  "count": 4461,
   "records": [
+    {
+      "id": "hkex:2026111300682",
+      "subject_name": "中國誠通發展集團",
+      "subject_type": "港股上市公司",
+      "stock_code": "00217",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-13",
+      "title": "主要交易 - 售後回租安排",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1113/2026111300682_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1113/2026111300682_c.pdf",
+      "matched_keywords": [
+        "售後回租"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "中國誠通發展集團公告涉及售后回租，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露",
+        "售后回租"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 主要交易 - 售後回租安排"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026111301421",
+      "subject_name": "天長集團",
+      "subject_type": "港股上市公司",
+      "stock_code": "02182",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-13",
+      "title": "有關收購機器及融資租賃協議的須予披露交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1113/2026111301421_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1113/2026111301421_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "天長集團公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 有關收購機器及融資租賃協議的須予披露交易"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026111301317",
+      "subject_name": "山高新能源",
+      "subject_type": "港股上市公司",
+      "stock_code": "01250",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-13",
+      "title": "有關融資租賃協議之關連交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1113/2026111301317_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1113/2026111301317_c.pdf",
+      "matched_keywords": [
+        "售後回租",
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "出租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "是",
+      "guarantee_or_collateral": "未披露",
+      "summary": "山高新能源公告涉及售后回租，角色为出租人。",
+      "risk_labels": [
+        "关联交易",
+        "售后回租"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 有關融資租賃協議之關連交易",
+        "[正文] 北北送 、 河源華浩 、 六安北控 、 南通首府 、 石家莊北控及永州北控 （各自為本公司之間接全資附屬公司 ， 作為承租人） 就租賃資產的售後回租安排訂立融資租賃協議 。 上市規則之涵義於本公告日期 ， 由於(i) 山高國際租賃為山高控股之間接全資附屬公司；及 (ii) 山高控股為本公司控股股東 ， 直接持有本公司之已發行股本總額約 56.97% ， 故根據上巿規則第 14A章 ， ",
+        "[正文] 告全部或任何部份內容而產生或因倚賴該等內容而引致的任何損失承擔任何責任 。 （於開曼群島註冊成立之有限公司） （股份代號：01250） 有關融資租賃協議之關連交易訂立融資租賃協議董事會宣佈 ， 於二零二六年十一月十三日 （交易時段後） ， 山高國際租賃 （作為出租人） 與泰州北清 、 撫州北控 、 河北北送 、 河源華浩 、 六安北控 、 南通首府 、 石家莊北控及永州北控 （各自為本"
+      ],
+      "attention_level": "B",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026111300322",
+      "subject_name": "興業控股",
+      "subject_type": "港股上市公司",
+      "stock_code": "00132",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-13",
+      "title": "主要交易 作為出租人訂立融資租賃",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1113/2026111300322_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1113/2026111300322_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "出租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "興業控股公告涉及融资租赁交易，角色为出租人。",
+      "risk_labels": [
+        "提供担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 主要交易 作為出租人訂立融資租賃",
+        "[正文] IP HOLDINGS LIMITED 興業控股有限公司 （股份代號：001 32） （於百慕達註冊成立之有限公司） 主要交易作為出租人訂立融資租賃董事會函件載於本通函第 3至8頁。 根據上市規則 ， 作為本通函主體事項之交易已透過股東書面批准之方式獲批准 ， 而向股東發佈本通函乃僅供參考 。 二零二六年十一月十六日目錄 – i – 頁次釋義 ....................."
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026111300451",
+      "subject_name": "興業控股",
+      "subject_type": "港股上市公司",
+      "stock_code": "00132",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-13",
+      "title": "作為出租人訂立融資租賃之主要交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1113/2026111300451_c.htm",
+      "pdf_url": "",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "出租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "興業控股公告涉及融资租赁交易，角色为出租人。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "仅公告元数据",
+      "snippets": [
+        "[标题] 作為出租人訂立融資租賃之主要交易"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "hkex:2026111201413",
       "subject_name": "中關村科技租賃",
