@@ -1,7 +1,44 @@
 {
-  "generated_at": "2026-11-16 20:30:03",
-  "count": 4464,
+  "generated_at": "2026-11-17 22:23:35",
+  "count": 4465,
   "records": [
+    {
+      "id": "cninfo:1225675654",
+      "subject_name": "渤海租赁",
+      "subject_type": "A股上市公司",
+      "stock_code": "000415",
+      "bond_code": "",
+      "region": "新疆",
+      "industry": "租赁和商务服务业-租赁业",
+      "announcement_date": "2026-11-17",
+      "title": "关于全资子公司融资及对外担保的进展公告",
+      "source": "巨潮资讯",
+      "source_url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=000415&announcementId=1225675654",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-11-18/1225675654.PDF",
+      "matched_keywords": [
+        "租赁融资",
+        "融资租赁"
+      ],
+      "matched_position": "元数据",
+      "announcement_type": "担保公告",
+      "lease_role": "担保方",
+      "amount": "4,303,414.40万元",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "渤海租赁公告涉及担保公告，金额4,303,414.40万元，涉及提供担保。",
+      "risk_labels": [
+        "子公司承租",
+        "对外担保",
+        "资产抵押"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [],
+      "attention_level": "B",
+      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
+    },
     {
       "id": "cninfo:1225673477",
       "subject_name": "博敏电子",
