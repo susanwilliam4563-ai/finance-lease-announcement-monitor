@@ -1,7 +1,47 @@
 {
-  "generated_at": "2026-11-17 22:23:35",
-  "count": 4465,
+  "generated_at": "2026-11-18 13:57:04",
+  "count": 4466,
   "records": [
+    {
+      "id": "hkex:2026111801366",
+      "subject_name": "中國船舶租賃",
+      "subject_type": "港股上市公司",
+      "stock_code": "03877",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-18",
+      "title": "須予披露交易 有關 船舶售後租回的 額外融資及修訂",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1118/2026111801366_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1118/2026111801366_c.pdf",
+      "matched_keywords": [
+        "售後租回",
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "承租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "中國船舶租賃公告涉及售后回租，角色为承租人。",
+      "risk_labels": [
+        "售后回租",
+        "提供担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 有關 船舶售後租回的 額外融資及修訂",
+        "[正文] SC (Hong Kong) Shipping Company Limited 中國船舶集團 （香港） 航運租賃有限公司須予披露交易有關船舶售後租回的額外融資及修訂董事會欣然宣佈 ， 於二零二六年十一月十八日 ， 本公司全資擁有的特殊目的公司Fortune Lianjiang 已與 （其中包括） 承租人就現有的船舶售後租回訂立修訂及重列協議 。 根據修訂及重列協議 ， 訂約方同意修訂及",
+        "[正文]  (i) 現有租賃項下的未償還本金； (ii) 船舶的估值及後續改裝工程； (iii) 船舶長期轉租協議的已訂約收入狀況； (iv)可資比較融資租賃及融資服務的現行條款 ； 及 (v)承租人的過往付款記錄以及擔保與抵押安排 。 5 擔保就交易而言 ， 現有擔保及抵押文件 （以先前尚未解除者為限） 仍將繼續有效 ， 並確認延伸至經修訂及增加後的義務 。 主要擔保安排包括： (i) Gol"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "cninfo:1225675654",
       "subject_name": "渤海租赁",
