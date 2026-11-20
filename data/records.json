@@ -1,7 +1,43 @@
 {
-  "generated_at": "2026-11-19 13:02:57",
-  "count": 4467,
+  "generated_at": "2026-11-20 11:38:24",
+  "count": 4468,
   "records": [
+    {
+      "id": "hkex:2026112000327",
+      "subject_name": "百應控股",
+      "subject_type": "港股上市公司",
+      "stock_code": "08525",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-20",
+      "title": "有關融資租賃協議的須予披露交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/gem/2026/1120/2026112000327_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/gem/2026/1120/2026112000327_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "百應控股公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 有關融資租賃協議的須予披露交易"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "hkex:2026111900499",
       "subject_name": "興業控股",
