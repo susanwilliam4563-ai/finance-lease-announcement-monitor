@@ -1,7 +1,120 @@
 {
-  "generated_at": "2026-11-20 20:15:01",
-  "count": 4469,
+  "generated_at": "2026-11-23 09:01:46",
+  "count": 4472,
   "records": [
+    {
+      "id": "hkex:2026112300461",
+      "subject_name": "友聯國際教育租賃",
+      "subject_type": "港股上市公司",
+      "stock_code": "01563",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-23",
+      "title": "須予披露交易 融資租賃協議",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1123/2026112300461_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1123/2026112300461_c.pdf",
+      "matched_keywords": [
+        "售後回租",
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "出租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "友聯國際教育租賃公告涉及售后回租，角色为出租人。",
+      "risk_labels": [
+        "售后回租",
+        "提供担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易 融資租賃協議",
+        "[正文] ，批准山東銀鷹就承租人妥善履行融資租賃協議項下的義務簽訂連帶責任擔保； (c) 出租人已收到承租人正式簽署的股東決議，批准融資租賃協議項下的售後回租安排，且該決議的形式和內容得到出租人認可； (d) 出租人已收到承租人支付融資租賃協議項下的人民幣 500,000 元保證金（詳見本公告下文「(b) 回租安排」）；及 (e) 承租人已授權出租人代表查閱載有承租人業務賬目及其應收帳款的資料。",
+        "[正文]  HOLDINGS LIMITED ʾᑌ਷ყ઺ԃॡ༣છٰϞࠢʮ̡ ׵කਟ໊ࢥൗ̅ϓͭٙϞࠢʮ̡ ٰ΅˾໮j 1563  須予披露交易融資租賃協議融資租賃協議董事會欣然宣佈，於二零二六年十一月二十三日（交易時段後），出租人（作為出租人）為本公司之全資附屬公司，擬與承租人（作為承租人）訂立融資租賃協議， 據此(i) 出租人同意以代價人民幣25,000,000 元向承租人購買租賃資產"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026112300393",
+      "subject_name": "興業控股",
+      "subject_type": "港股上市公司",
+      "stock_code": "00132",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-23",
+      "title": "主要交易 作為出租人訂立融資租賃",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1123/2026112300393_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1123/2026112300393_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "出租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "興業控股公告涉及融资租赁交易，角色为出租人。",
+      "risk_labels": [
+        "提供担保"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 主要交易 作為出租人訂立融資租賃",
+        "[正文] IP HOLDINGS LIMITED 興業控股有限公司 （股份代號：001 32） （於百慕達註冊成立之有限公司） 主要交易作為出租人訂立融資租賃董事會函件載於本通函第 4至10頁。 根據上市規則 ， 作為本通函主體事項之交易已透過股東書面批准之方式獲批准 ， 而向股東發佈本通函乃僅供參考 。 二零二六年十一月二十四日目錄 – i – 頁次釋義 ..................."
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026112300492",
+      "subject_name": "興業控股",
+      "subject_type": "港股上市公司",
+      "stock_code": "00132",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-23",
+      "title": "作為出租人訂立融資租賃之主要交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1123/2026112300492_c.htm",
+      "pdf_url": "",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "出租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "興業控股公告涉及融资租赁交易，角色为出租人。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "仅公告元数据",
+      "snippets": [
+        "[标题] 作為出租人訂立融資租賃之主要交易"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "cninfo:1225680848",
       "subject_name": "亚星化学",
