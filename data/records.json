@@ -1,7 +1,45 @@
 {
-  "generated_at": "2026-11-23 09:01:46",
-  "count": 4472,
+  "generated_at": "2026-11-23 21:22:45",
+  "count": 4476,
   "records": [
+    {
+      "id": "hkex:2026112300719",
+      "subject_name": "中國誠通發展集團",
+      "subject_type": "港股上市公司",
+      "stock_code": "00217",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-23",
+      "title": "主要交易 - 售後回租安排及融資租賃安排",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1123/2026112300719_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1123/2026112300719_c.pdf",
+      "matched_keywords": [
+        "售後回租",
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "中國誠通發展集團公告涉及售后回租，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露",
+        "售后回租"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 主要交易 - 售後回租安排及融資租賃安排"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "hkex:2026112300461",
       "subject_name": "友聯國際教育租賃",
@@ -41,6 +79,130 @@
       ],
       "attention_level": "C",
       "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "cninfo:1225683639",
+      "subject_name": "民德电子",
+      "subject_type": "A股上市公司",
+      "stock_code": "300656",
+      "bond_code": "",
+      "region": "广东",
+      "industry": "制造业-计算机、通信和其他电子设备制造业",
+      "announcement_date": "2026-11-23",
+      "title": "关于全资子公司开展融资租赁业务暨担保进展的公告",
+      "source": "巨潮资讯",
+      "source_url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=300656&announcementId=1225683639",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-11-23/1225683639.PDF",
+      "matched_keywords": [
+        "售后回租",
+        "租赁融资",
+        "融资租赁",
+        "融资租赁业务",
+        "融资租赁合同",
+        "金融租赁"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "担保方",
+      "amount": "1,000万元",
+      "term": "24个月",
+      "counterparty": "江苏金融租赁股份有限公司2、承租人：民德电子（丽水）有限公司3、租赁方式：售",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "民德电子公告涉及售后回租，金额1,000万元，期限24个月，交易对手为江苏金融租赁股份有限公司2、承租人：民德电子（丽水）有限公司3、租赁方式：售，涉及提供担保。",
+      "risk_labels": [
+        "利率未披露",
+        "售后回租",
+        "子公司承租",
+        "对外担保",
+        "资产抵押"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[正文] 财务结构，提升公司资产的运营效率，满足公司经营发展的资金需求，与江苏金融租赁股份有限公司（以下简称“江苏金租”） 签署了《融资租赁合同》，以售后回租的形式开展融资租赁业务，融资额度为人民币1,000万元，融资期限24个月，自起租日起算。公司及控股子公司浙江广芯微电子有限公司（以下简称“广芯微电子”）为该业务提供连带责任保证，同时， 民德（丽水）以本次售后回租设备提供",
+        "[标题] 关于全资子公司开展融资租赁业务暨担保进展的公告",
+        "[正文] 证券代码：300656 证券简称：民德电子公告编号：2026-081 深圳市民德电子科技股份有限公司关于全资子公司开展融资租赁业务暨担保进展的公告本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假记载、误导性陈述或重大遗漏。 深圳市民德电子科技股份有限公司（以下简称“公司”或“民德电子”）全资子公司民德电子（丽水）有限公司（以下",
+        "[标题] 关于全资子公司开展融资租赁业务暨担保进展的公告",
+        "[正文] 证券代码：300656 证券简称：民德电子公告编号：2026-081 深圳市民德电子科技股份有限公司关于全资子公司开展融资租赁业务暨担保进展的公告本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假记载、误导性陈述或重大遗漏。 深圳市民德电子科技股份有限公司（以下简称“公司”或“民德电子”）全资子公司民德电子（丽水）有限公司（以下简称",
+        "[正文] 拓宽融资渠道，优化财务结构，提升公司资产的运营效率，满足公司经营发展的资金需求，与江苏金融租赁股份有限公司（以下简称“江苏金租”） 签署了《融资租赁合同》，以售后回租的形式开展融资租赁业务，融资额度为人民币1,000万元，融资期限24个月，自起租日起算。公司及控股子公司浙江广芯微电子有限公司（以下简称“广芯微电子”）为该业务提供连带责任保证，同时， 民德（丽水）以本次售"
+      ],
+      "attention_level": "A",
+      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
+    },
+    {
+      "id": "cninfo:1225684046",
+      "subject_name": "江苏金租",
+      "subject_type": "A股上市公司",
+      "stock_code": "600901",
+      "bond_code": "",
+      "region": "江苏",
+      "industry": "金融业-货币金融服务",
+      "announcement_date": "2026-11-23",
+      "title": "江苏金租：北京市中伦（上海）律师事务所关于中证中小投资者服务中心有限责任公司公开征集江苏金融租赁股份有限公司投票权的法律意见书",
+      "source": "巨潮资讯",
+      "source_url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600901&announcementId=1225684046",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-11-24/1225684046.PDF",
+      "matched_keywords": [
+        "金融租赁"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "承租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "江苏金租公告涉及融资租赁交易。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 江苏金租：北京市中伦（上海）律师事务所关于中证中小投资者服务中心有限责任公司公开征集江苏金融租赁股份有限公司投票权的法律意见书",
+        "[正文] 北京市中伦（上海）律师事务所关于中证中小投资者服务中心有限责任公司公开征集江苏金融租赁股份有限公司投票权的法律意见书二〇二六年十一月 1 北京市中伦（上海）律师事务所关于中证中小投资者服务中心有限责任公司公开征集江苏金融租赁股份有限公司投票权的法律意见书致：中证中小投资者服务中心有限责任公司（以下简称“征"
+      ],
+      "attention_level": "C",
+      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
+    },
+    {
+      "id": "cninfo:1225684056",
+      "subject_name": "江苏金租",
+      "subject_type": "A股上市公司",
+      "stock_code": "600901",
+      "bond_code": "",
+      "region": "江苏",
+      "industry": "金融业-货币金融服务",
+      "announcement_date": "2026-11-23",
+      "title": "江苏金租：江苏世纪同仁律师事务所关于江苏金融租赁股份有限公司2026年第二次临时股东会的法律意见书",
+      "source": "巨潮资讯",
+      "source_url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=600901&announcementId=1225684056",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-11-24/1225684056.PDF",
+      "matched_keywords": [
+        "金融租赁"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "承租人",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "江苏金租公告涉及融资租赁交易。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 江苏金租：江苏世纪同仁律师事务所关于江苏金融租赁股份有限公司2026年第二次临时股东会的法律意见书",
+        "[正文] 1 江苏世纪同仁律师事务所关于江苏金融租赁股份有限公司 2026年第二次临时股东会的法律意见书江苏金融租赁股份有限公司： 根据《中华人民共和国公司法》 （以下简称“ 《公司法》 ” ） 、 《中华人民共和国证券法》 《上市公司股东会规则》和《上海证券交易所上市公"
+      ],
+      "attention_level": "C",
+      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
     },
     {
       "id": "hkex:2026112300393",
