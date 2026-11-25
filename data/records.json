@@ -1,7 +1,43 @@
 {
-  "generated_at": "2026-11-25 12:52:41",
-  "count": 4479,
+  "generated_at": "2026-11-25 22:30:35",
+  "count": 4480,
   "records": [
+    {
+      "id": "hkex:2026112501492",
+      "subject_name": "北京能源國際",
+      "subject_type": "港股上市公司",
+      "stock_code": "00686",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-25",
+      "title": "主要交易 找王融資租賃安排",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1125/2026112501492_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1125/2026112501492_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "北京能源國際公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 主要交易 找王融資租賃安排"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
     {
       "id": "hkex:2026112500499",
       "subject_name": "興業控股",
