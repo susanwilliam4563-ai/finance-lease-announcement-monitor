@@ -1,7 +1,174 @@
 {
-  "generated_at": "2026-11-25 22:30:35",
-  "count": 4480,
+  "generated_at": "2026-11-27 18:58:07",
+  "count": 4484,
   "records": [
+    {
+      "id": "hkex:2026112701131",
+      "subject_name": "METROPOLIS CAP",
+      "subject_type": "港股上市公司",
+      "stock_code": "08621",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-27",
+      "title": "關於融資租賃協議之須予披露交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/gem/2026/1127/2026112701131_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/gem/2026/1127/2026112701131_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "METROPOLIS CAP公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 關於融資租賃協議之須予披露交易"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "hkex:2026112701952",
+      "subject_name": "中關村科技租賃",
+      "subject_type": "港股上市公司",
+      "stock_code": "01601",
+      "bond_code": "",
+      "region": "待补充",
+      "industry": "待补充",
+      "announcement_date": "2026-11-27",
+      "title": "須予披露交易採購協議及融資租賃交易",
+      "source": "港交所披露易",
+      "source_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1127/2026112701952_c.pdf",
+      "pdf_url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/1127/2026112701952_c.pdf",
+      "matched_keywords": [
+        "融資租賃"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "融资租赁交易",
+      "lease_role": "交易对手",
+      "amount": "未披露",
+      "term": "未披露",
+      "counterparty": "未披露",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "未披露",
+      "summary": "中關村科技租賃公告涉及融资租赁交易，角色为交易对手。",
+      "risk_labels": [
+        "利率未披露"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 須予披露交易採購協議及融資租賃交易"
+      ],
+      "attention_level": "C",
+      "notes": "披露易官方标题搜索"
+    },
+    {
+      "id": "cninfo:1225692788",
+      "subject_name": "海南矿业",
+      "subject_type": "A股上市公司",
+      "stock_code": "601969",
+      "bond_code": "",
+      "region": "海南",
+      "industry": "采矿业-黑色金属矿采选业",
+      "announcement_date": "2026-11-27",
+      "title": "海南矿业股份有限公司关于开展融资租赁售后回租业务的公告",
+      "source": "巨潮资讯",
+      "source_url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=601969&announcementId=1225692788",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-11-28/1225692788.PDF",
+      "matched_keywords": [
+        "售后回租",
+        "售后租回",
+        "租赁融资",
+        "融资租赁",
+        "融资租赁业务",
+        "融资租赁合同",
+        "金融租赁"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "承租人",
+      "amount": "2.9亿元",
+      "term": "36个月",
+      "counterparty": "交银金融租赁",
+      "leased_asset": "未披露",
+      "related_party": "是",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "海南矿业公告涉及售后回租，金额2.9亿元，期限36个月，交易对手为交银金融租赁，构成关联交易，涉及提供担保。",
+      "risk_labels": [
+        "关联交易",
+        "售后回租",
+        "大额融资",
+        "对外担保",
+        "资产抵押"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 海南矿业股份有限公司关于开展融资租赁售后回租业务的公告",
+        "[正文] 证券代码：601969 证券简称：海南矿业公告编号：2026-128 海南矿业股份有限公司关于开展融资租赁售后回租业务的公告本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示：  为优化筹资结构，降低财务费用，海南矿业股份有限公司（以下简称",
+        "[标题] 海南矿业股份有限公司关于开展融资租赁售后回租业务的公告",
+        "[正文] 证券代码：601969 证券简称：海南矿业公告编号：2026-128 海南矿业股份有限公司关于开展融资租赁售后回租业务的公告本公司董事会及全体董事保证本公告内容不存在任何虚假记载、误导性陈述或者重大遗漏，并对其内容的真实性、准确性和完整性承担法律责任。 重要内容提示：  为优化筹资结构，降低财务费用，海南矿业股份有限公司（",
+        "[正文]  5、成立日期：2007 年 12 月 20 日 6、住所：中国（上海）自由贸易试验区陆家嘴环路 333 号 28、29 楼 7、经营范围：融资租赁业务，接受承租人的租赁保证金，固定收益类证券投资业务，转让和受让融资租赁资产，吸收非银行股东 3 个月（含）以上定期存款，同业拆借，向金融机构借款，境外借款，租赁物变卖及处理业务，经济咨询， 在境内保税地区设立项目公司开展融",
+        "[正文] 定资产 3、权属状态：标的资产不存在质押或者其他第三人权利，不存在涉及有关资产的重大争议、诉讼或仲裁事项，不存在查封、冻结等司法措施。 四、融资租赁合同的主要内容 1、合同双方：交银金融租赁有限责任公司（出租人）、公司（承租人）。 2、租赁方式：售后回租。 3、租赁物：公司石碌铁矿分公司部分铁矿采选设备。 4、融资金额及用途：租赁物转让款（即租赁本金）人民币 29,00"
+      ],
+      "attention_level": "A",
+      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
+    },
+    {
+      "id": "cninfo:1225691743",
+      "subject_name": "蓝帆医疗",
+      "subject_type": "A股上市公司",
+      "stock_code": "002382",
+      "bond_code": "",
+      "region": "山东",
+      "industry": "制造业-橡胶和塑料制品业",
+      "announcement_date": "2026-11-27",
+      "title": "关于公司及子公司为子公司开展售后回租业务提供担保的进展公告",
+      "source": "巨潮资讯",
+      "source_url": "https://www.cninfo.com.cn/new/disclosure/detail?stockCode=002382&announcementId=1225691743",
+      "pdf_url": "https://static.cninfo.com.cn/finalpage/2026-11-28/1225691743.PDF",
+      "matched_keywords": [
+        "售后回租",
+        "售后租回",
+        "融资租赁"
+      ],
+      "matched_position": "标题+正文",
+      "announcement_type": "售后回租",
+      "lease_role": "担保方",
+      "amount": "7,901.20万元",
+      "term": "2年",
+      "counterparty": "深圳市融资租赁（集团）有限公司",
+      "leased_asset": "未披露",
+      "related_party": "未披露",
+      "guarantee_or_collateral": "提供担保",
+      "summary": "蓝帆医疗公告涉及售后回租，金额7,901.20万元，期限2年，交易对手为深圳市融资租赁（集团）有限公司，涉及提供担保。",
+      "risk_labels": [
+        "利率未披露",
+        "售后回租",
+        "子公司承租",
+        "对外担保",
+        "资产抵押"
+      ],
+      "review_status": "已复核官方公告",
+      "snippets": [
+        "[标题] 关于公司及子公司为子公司开展售后回租业务提供担保的进展公告",
+        "[正文] 证券代码：002382 证券简称：蓝帆医疗公告编号：2026-083 蓝帆医疗股份有限公司关于公司及子公司为子公司开展售后回租业务提供担保的进展公告本公司及董事会全体成员保证信息披露的内容真实、准确、完整，没有虚假记载、 误导性陈述或重大遗漏。 一、担保情况概述蓝帆医疗股份有限公司（以下简称“公司”）于2025年12月12日召开了第六届董事会第",
+        "[正文] 26年度拟向银行等金融机构申请综合授信总额不超过人民币30亿元，授信品种包括但不限于流动资金贷款、保函、银行承兑汇票、国内信用证、国内保理、融资租赁等综合授信业务（具体业务品种以相关金融机构审批为准），具体融资金额将视公司及子公司生产运营对资金的需求来确定。公司及子公司将根据金融机构的授信要求为上述综合授信提供担保额度总计不超过人民币30亿元，担保方式包括但不限于连"
+      ],
+      "attention_level": "A",
+      "notes": "地区和行业来自东方财富公司资料：注册地省份、证监会行业分类"
+    },
     {
       "id": "hkex:2026112501492",
       "subject_name": "北京能源國際",
